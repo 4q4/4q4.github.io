@@ -20,8 +20,8 @@ brew update; and brew install hugo  Read the document about Hugo. Learn some bas
  read others&rsquo; configuration" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/start-a-new-blog/" />
-<meta property="article:published_time" content="2019-11-25T18:56:36+08:00" />
-<meta property="article:modified_time" content="2019-11-25T18:56:36+08:00" />
+<meta property="article:published_time" content="2019-11-25T20:17:37+08:00" />
+<meta property="article:modified_time" content="2019-11-25T20:17:37+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="start a new blog"/>
@@ -44,8 +44,8 @@ brew update; and brew install hugo  Read the document about Hugo. Learn some bas
  read others&rsquo; configuration">
 
 
-<meta itemprop="dateModified" content="2019-11-25T18:56:36&#43;08:00" />
-<meta itemprop="wordCount" content="78">
+<meta itemprop="dateModified" content="2019-11-25T20:17:37&#43;08:00" />
+<meta itemprop="wordCount" content="89">
 
 
 
@@ -58,6 +58,17 @@ brew update; and brew install hugo  Read the document about Hugo. Learn some bas
 <link rel="stylesheet" href="/css/default-dark.css" />
 
 
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-153304618-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -78,7 +89,7 @@ brew update; and brew install hugo  Read the document about Hugo. Learn some bas
 
   <nav>
     <div class="siteTitle">
-      <a href="/">Do sth. slowly</a>
+      <a href="/">Do sth. Slowly</a>
     </div> 
 
     
@@ -157,6 +168,12 @@ Refer to <a href="https://gohugo.io/getting-started/installing">this</a>.</p></l
 <p>read ox-hugo <a href="https://ox-hugo.scripter.co/doc/dates/">official document</a>.</p>
 
 <p>also refer to <a href="https://github.com/gyorb/hugo-dusk">hugo-dusk configuration</a>.</p></li>
+
+<li><p>setup Discus and Google Analytics</p></li>
+
+<li><p>deploy to github</p>
+
+<p>refer to <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">this</a>.</p></li>
 </ol>
 
 <p>Happy Blogging. :P</p>
@@ -183,7 +200,26 @@ Refer to <a href="https://gohugo.io/getting-started/installing">this</a>.</p></l
 </footer>
 
 
-  
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "do-sth-slowly" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
 </article>
