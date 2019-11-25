@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Something about emacs on Do sth. slowly</title>
+    <link>/series/something-about-emacs/</link>
+    <description>Recent content in Something about emacs on Do sth. slowly</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 25 Nov 2019 18:58:11 +0800</lastBuildDate>
+    
+	<atom:link href="/series/something-about-emacs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Something About Emacs</title>
+      <link>/post/sth-about-emacs/</link>
+      <pubDate>Mon, 25 Nov 2019 18:58:11 +0800</pubDate>
+      
+      <guid>/post/sth-about-emacs/</guid>
+      <description>In this series, I will write something about Emacs.</description>
+    </item>
+    
+  </channel>
+</rss>
