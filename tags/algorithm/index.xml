@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>algorithm on Do sth. Slowly</title>
+    <link>/tags/algorithm/</link>
+    <description>Recent content in algorithm on Do sth. Slowly</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 26 Nov 2019 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LCP 3. 机器人大冒险</title>
+      <link>/post/leetcode-lcp-3/</link>
+      <pubDate>Tue, 26 Nov 2019 00:00:00 +0800</pubDate>
+      
+      <guid>/post/leetcode-lcp-3/</guid>
+      <description>这道题目考察对循环节的理解。
+#include &amp;lt;vector&amp;gt; #include &amp;lt;iostream&amp;gt; #include &amp;lt;cmath&amp;gt; using namespace std; class Solution { public: int deltax, deltay; bool robot(string command, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; obstacles, int x, int y) { deltax = 0, deltay = 0; for (auto i: command) if (i == &#39;U&#39;) deltay++; else deltax++; for (auto i: obstacles) { if (i[0] &amp;gt; x || i[1] &amp;gt; y) continue; if (check(command, i[0], i[1], i[0], i[1])) return false; } return check(command, x, y, x, y); } bool check(string cmd, int x, int y, int X, int Y) { int N, startx, starty, N1; if (cmd[0] == &#39;U&#39;) { N = ceil(1.</description>
+    </item>
+    
+  </channel>
+</rss>

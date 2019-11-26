@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="4q4" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.59.1" />
+
+<link rel="canonical" href="/post/leetcode-lcp-3/">
+<meta property="og:title" content="LCP 3. 机器人大冒险" />
+<meta property="og:description" content="这道题目考察对循环节的理解。
+#include &lt;vector&gt; #include &lt;iostream&gt; #include &lt;cmath&gt; using namespace std; class Solution { public: int deltax, deltay; bool robot(string command, vector&lt;vector&lt;int&gt;&gt;&amp; obstacles, int x, int y) { deltax = 0, deltay = 0; for (auto i: command) if (i == &#39;U&#39;) deltay&#43;&#43;; else deltax&#43;&#43;; for (auto i: obstacles) { if (i[0] &gt; x || i[1] &gt; y) continue; if (check(command, i[0], i[1], i[0], i[1])) return false; } return check(command, x, y, x, y); } bool check(string cmd, int x, int y, int X, int Y) { int N, startx, starty, N1; if (cmd[0] == &#39;U&#39;) { N = ceil(1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/leetcode-lcp-3/" />
+<meta property="article:published_time" content="2019-11-26T00:00:00+08:00" />
+<meta property="article:modified_time" content="2019-11-26T19:03:12+08:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="LCP 3. 机器人大冒险"/>
+<meta name="twitter:description" content="这道题目考察对循环节的理解。
+#include &lt;vector&gt; #include &lt;iostream&gt; #include &lt;cmath&gt; using namespace std; class Solution { public: int deltax, deltay; bool robot(string command, vector&lt;vector&lt;int&gt;&gt;&amp; obstacles, int x, int y) { deltax = 0, deltay = 0; for (auto i: command) if (i == &#39;U&#39;) deltay&#43;&#43;; else deltax&#43;&#43;; for (auto i: obstacles) { if (i[0] &gt; x || i[1] &gt; y) continue; if (check(command, i[0], i[1], i[0], i[1])) return false; } return check(command, x, y, x, y); } bool check(string cmd, int x, int y, int X, int Y) { int N, startx, starty, N1; if (cmd[0] == &#39;U&#39;) { N = ceil(1."/>
+
+
+<meta itemprop="name" content="LCP 3. 机器人大冒险">
+<meta itemprop="description" content="这道题目考察对循环节的理解。
+#include &lt;vector&gt; #include &lt;iostream&gt; #include &lt;cmath&gt; using namespace std; class Solution { public: int deltax, deltay; bool robot(string command, vector&lt;vector&lt;int&gt;&gt;&amp; obstacles, int x, int y) { deltax = 0, deltay = 0; for (auto i: command) if (i == &#39;U&#39;) deltay&#43;&#43;; else deltax&#43;&#43;; for (auto i: obstacles) { if (i[0] &gt; x || i[1] &gt; y) continue; if (check(command, i[0], i[1], i[0], i[1])) return false; } return check(command, x, y, x, y); } bool check(string cmd, int x, int y, int X, int Y) { int N, startx, starty, N1; if (cmd[0] == &#39;U&#39;) { N = ceil(1.">
+
+
+<meta itemprop="datePublished" content="2019-11-26T00:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-26T19:03:12&#43;08:00" />
+<meta itemprop="wordCount" content="335">
+
+
+
+<meta itemprop="keywords" content="LeetCode,algorithm," />
+
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-153304618-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<title>
+
+
+     LCP 3. 机器人大冒险 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="/">Do sth. Slowly</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/about/"><div class="nav-item-title">About</div></a>
+    
+    <a class="nav-item" href="/series"><div class="nav-item-title">Series</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:thanks_music163@163.com"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/4q4" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> LCP 3. 机器人大冒险 </h1>
+    <div class="content"> <p>这道题目考察对循环节的理解。</p>
+
+<pre><code class="language-cpp">#include &lt;vector&gt;
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+
+using namespace std;
+
+class Solution {
+public:
+  int deltax, deltay;
+  bool robot(string command, vector&lt;vector&lt;int&gt;&gt;&amp; obstacles, int x, int y) {
+    deltax = 0, deltay = 0;
+    for (auto i: command)
+      if (i == 'U') deltay++;
+      else deltax++;
+    for (auto i: obstacles) {
+      if (i[0] &gt; x || i[1] &gt; y) continue;
+      if (check(command, i[0], i[1], i[0], i[1])) return false;
+    }
+    return check(command, x, y, x, y);
+  }
+  bool check(string cmd, int x, int y, int X, int Y) {
+    int N, startx, starty, N1;
+    if (cmd[0] == 'U') {
+      N = ceil(1. * y / deltay);
+      N1 = ceil(1. * x / deltax);
+      if (x % deltax == 0) {
+      if (!(N == N1 || N == N1 + 1)) return false;
+      } else
+      if (N != N1) return false;
+
+      startx = (N - 1) * deltax;
+      starty = (N - 1) * deltay;
+    } else {
+      N = ceil(1. * x / deltax);
+      N1 = ceil(1. * y / deltay);
+      if (y % deltay == 0) {
+      if (!(N == N1 || N == N1 + 1)) return false;
+      } else
+      if (N != N1) return false;
+
+      startx = (N - 1) * deltax;
+      starty = (N - 1) * deltay;
+    }
+    if (startx == X &amp;&amp; starty == Y) return true;
+    for (auto i: cmd) {
+      if (i == 'U') starty++;
+      else startx++;
+      if (startx == X &amp;&amp; starty == Y) return true;
+    }
+    return false;
+  }
+};
+
+int main(void) {
+  Solution a;
+  using VI = vector&lt;int&gt;;
+  auto v = vector&lt;VI&gt;{};
+  cout &lt;&lt; &quot;re: &quot; &lt;&lt; a.robot(&quot;URR&quot;, v, 3, 2) &lt;&lt; endl;
+  v = vector&lt;VI&gt;{{2, 2}};
+  cout &lt;&lt; &quot;re: &quot; &lt;&lt; a.robot(&quot;URR&quot;, v, 3, 2) &lt;&lt; endl;
+
+  v = vector&lt;VI&gt;{{4, 2}};
+  cout &lt;&lt; &quot;re: &quot; &lt;&lt; a.robot(&quot;URR&quot;, v, 3, 2) &lt;&lt; endl;
+
+  v = vector&lt;VI&gt;{{7, 7}, {0, 5}, {2, 7}, {8, 6}, {8, 7}, {6, 5}, {4, 4}, {0, 3}, {3, 6}};
+  cout &lt;&lt; &quot;re: &quot; &lt;&lt; a.robot(&quot;URRURRR&quot;, v, 4915, 1966) &lt;&lt; endl;
+
+  return 0;
+}
+</code></pre>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/leetcode">#LeetCode</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/algorithm">#algorithm</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 26 Nov 2019 </div>
+  </div>
+
+</footer>
+
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "do-sth-slowly" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:thanks_music163@163.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/4q4" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

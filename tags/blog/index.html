@@ -15,7 +15,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/tags/blog/" />
 
-<meta property="og:updated_time" content="2019-11-25T20:17:37+08:00" />
+<meta property="og:updated_time" content="2019-11-25T00:00:00+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="blog"/>
@@ -137,11 +137,12 @@ if (!doNotTrack) {
   <div class="summary">
     generate ssh-keygen For more information, please refer to this.
 λ ssh-keygen -t rsa -b 4096 -C &quot;thanks_music163@163.com&quot;  Add public key to github
- install Emacs package ox-hugo
+ Add ssh configuration
+Host github-thanks_music HostName github.com User git IdentityFile ~/.ssh/id_rsa_thanks_music  install Emacs package ox-hugo
+M-x list-packages  or use-package:
 (use-package ox-hugo :ensure t :after ox)  Refer to document ox-hugo.
- install hugo
-brew update; and brew install hugo  Read the document about Hugo. Learn some basic terms and knowledge about Hugo. Refer to this.
- read others&rsquo; configuration
+ install hugo on macOS:
+brew update; and brew install hugo  Read the document about Hugo.
   </div>
 
   <div class="rmore">

@@ -16,7 +16,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
 
-<meta property="og:updated_time" content="2019-11-25T20:17:37+08:00" />
+<meta property="og:updated_time" content="2019-11-26T00:00:00+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Do sth. Slowly"/>
@@ -112,20 +112,20 @@ if (!doNotTrack) {
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='/post/start-a-new-blog/'> start a new blog</a> </h2>
+    <h2 class="title"> <a href='/post/leetcode-lcp-3/'> LCP 3. 机器人大冒险</a> </h2>
     <div class="meta">
       <div class="date">
-      25 Nov, 2019 - 1 minutes
+      26 Nov, 2019 - 2 minutes
       </div>
       
 <div class="tags">
     
       <div class="tag">
-        <a href="/tags/blog">#blog</a>
+        <a href="/tags/leetcode">#LeetCode</a>
       </div>
     
       <div class="tag">
-        <a href="/tags/hugo">#hugo</a>
+        <a href="/tags/algorithm">#algorithm</a>
       </div>
     
 </div>
@@ -135,17 +135,12 @@ if (!doNotTrack) {
   </header>
 
   <div class="summary">
-    generate ssh-keygen For more information, please refer to this.
-λ ssh-keygen -t rsa -b 4096 -C &quot;thanks_music163@163.com&quot;  Add public key to github
- install Emacs package ox-hugo
-(use-package ox-hugo :ensure t :after ox)  Refer to document ox-hugo.
- install hugo
-brew update; and brew install hugo  Read the document about Hugo. Learn some basic terms and knowledge about Hugo. Refer to this.
- read others&rsquo; configuration
+    这道题目考察对循环节的理解。
+#include &lt;vector&gt; #include &lt;iostream&gt; #include &lt;cmath&gt; using namespace std; class Solution { public: int deltax, deltay; bool robot(string command, vector&lt;vector&lt;int&gt;&gt;&amp; obstacles, int x, int y) { deltax = 0, deltay = 0; for (auto i: command) if (i == 'U') deltay++; else deltax++; for (auto i: obstacles) { if (i[0] &gt; x || i[1] &gt; y) continue; if (check(command, i[0], i[1], i[0], i[1])) return false; } return check(command, x, y, x, y); } bool check(string cmd, int x, int y, int X, int Y) { int N, startx, starty, N1; if (cmd[0] == 'U') { N = ceil(1.
   </div>
 
   <div class="rmore">
-    <a href='/post/start-a-new-blog/' class="rmore">Read more</a>
+    <a href='/post/leetcode-lcp-3/' class="rmore">Read more</a>
   </div>
 
 
@@ -175,10 +170,56 @@ brew update; and brew install hugo  Read the document about Hugo. Learn some bas
 
   <div class="summary">
     In this series, I will write something about Emacs.
+motion commands of c-mode
+   Keystokes Command name Action     C-M-a beginning-of-defun Move to the beginning of the body of the function   C-M-e end-of-defun Move to the end of the function   C-M-h c-mark-function Put the cursor at the beginning of the function, the mark at the end   C-c C-q c-indent-defun Indent the entire function according to indention style    
   </div>
 
   <div class="rmore">
     <a href='/post/sth-about-emacs/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='/post/start-a-new-blog/'> start a new blog</a> </h2>
+    <div class="meta">
+      <div class="date">
+      25 Nov, 2019 - 1 minutes
+      </div>
+      
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/blog">#blog</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/hugo">#hugo</a>
+      </div>
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    generate ssh-keygen For more information, please refer to this.
+λ ssh-keygen -t rsa -b 4096 -C &quot;thanks_music163@163.com&quot;  Add public key to github
+ Add ssh configuration
+Host github-thanks_music HostName github.com User git IdentityFile ~/.ssh/id_rsa_thanks_music  install Emacs package ox-hugo
+M-x list-packages  or use-package:
+(use-package ox-hugo :ensure t :after ox)  Refer to document ox-hugo.
+ install hugo on macOS:
+brew update; and brew install hugo  Read the document about Hugo.
+  </div>
+
+  <div class="rmore">
+    <a href='/post/start-a-new-blog/' class="rmore">Read more</a>
   </div>
 
 

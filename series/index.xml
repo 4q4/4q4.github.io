@@ -6,15 +6,24 @@
     <description>Recent content in Series on Do sth. Slowly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 25 Nov 2019 18:58:11 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 Nov 2019 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="/series/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Solution to LeetCode Problems</title>
+      <link>/series/solution-to-leetcode-problems/</link>
+      <pubDate>Tue, 26 Nov 2019 00:00:00 +0800</pubDate>
+      
+      <guid>/series/solution-to-leetcode-problems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Something about emacs</title>
       <link>/series/something-about-emacs/</link>
-      <pubDate>Mon, 25 Nov 2019 18:58:11 +0800</pubDate>
+      <pubDate>Mon, 25 Nov 2019 00:00:00 +0800</pubDate>
       
       <guid>/series/something-about-emacs/</guid>
       <description></description>

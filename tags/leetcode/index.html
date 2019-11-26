@@ -9,20 +9,20 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <meta name="generator" content="Hugo 0.59.1" />
 
-<link rel="canonical" href="/series/something-about-emacs/">
-<meta property="og:title" content="Something about emacs" />
+<link rel="canonical" href="/tags/leetcode/">
+<meta property="og:title" content="LeetCode" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="/series/something-about-emacs/" />
+<meta property="og:url" content="/tags/leetcode/" />
 
-<meta property="og:updated_time" content="2019-11-25T00:00:00+08:00" />
+<meta property="og:updated_time" content="2019-11-26T00:00:00+08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Something about emacs"/>
+<meta name="twitter:title" content="LeetCode"/>
 <meta name="twitter:description" content=""/>
 
 
-<meta itemprop="name" content="Something about emacs">
+<meta itemprop="name" content="LeetCode">
 <meta itemprop="description" content="">
 
 
@@ -49,7 +49,7 @@ if (!doNotTrack) {
 <title>
 
 
-     Something about emacs 
+     LeetCode 
 
 </title>
 
@@ -105,23 +105,27 @@ if (!doNotTrack) {
 
 
 <h2 class="term-list-title">
-    <a href="/series/something-about-emacs/" class="linktopost">series: Something about emacs</a>
+    <a href="/tags/leetcode/" class="linktopost">tag: LeetCode</a>
 </h2>
 
 
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='/post/sth-about-emacs/'> Something About Emacs</a> </h2>
+    <h2 class="title"> <a href='/post/leetcode-lcp-3/'> LCP 3. 机器人大冒险</a> </h2>
     <div class="meta">
       <div class="date">
-      25 Nov, 2019 - 1 minutes
+      26 Nov, 2019 - 2 minutes
       </div>
       
 <div class="tags">
     
       <div class="tag">
-        <a href="/tags/emacs">#emacs</a>
+        <a href="/tags/leetcode">#LeetCode</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/algorithm">#algorithm</a>
       </div>
     
 </div>
@@ -131,13 +135,12 @@ if (!doNotTrack) {
   </header>
 
   <div class="summary">
-    In this series, I will write something about Emacs.
-motion commands of c-mode
-   Keystokes Command name Action     C-M-a beginning-of-defun Move to the beginning of the body of the function   C-M-e end-of-defun Move to the end of the function   C-M-h c-mark-function Put the cursor at the beginning of the function, the mark at the end   C-c C-q c-indent-defun Indent the entire function according to indention style    
+    这道题目考察对循环节的理解。
+#include &lt;vector&gt; #include &lt;iostream&gt; #include &lt;cmath&gt; using namespace std; class Solution { public: int deltax, deltay; bool robot(string command, vector&lt;vector&lt;int&gt;&gt;&amp; obstacles, int x, int y) { deltax = 0, deltay = 0; for (auto i: command) if (i == 'U') deltay++; else deltax++; for (auto i: obstacles) { if (i[0] &gt; x || i[1] &gt; y) continue; if (check(command, i[0], i[1], i[0], i[1])) return false; } return check(command, x, y, x, y); } bool check(string cmd, int x, int y, int X, int Y) { int N, startx, starty, N1; if (cmd[0] == 'U') { N = ceil(1.
   </div>
 
   <div class="rmore">
-    <a href='/post/sth-about-emacs/' class="rmore">Read more</a>
+    <a href='/post/leetcode-lcp-3/' class="rmore">Read more</a>
   </div>
 
 

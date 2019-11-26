@@ -6,7 +6,7 @@
     <description>Recent content in emacs on Do sth. Slowly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 25 Nov 2019 18:58:11 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,12 @@
     <item>
       <title>Something About Emacs</title>
       <link>/post/sth-about-emacs/</link>
-      <pubDate>Mon, 25 Nov 2019 18:58:11 +0800</pubDate>
+      <pubDate>Mon, 25 Nov 2019 00:00:00 +0800</pubDate>
       
       <guid>/post/sth-about-emacs/</guid>
-      <description>In this series, I will write something about Emacs.</description>
+      <description>In this series, I will write something about Emacs.
+motion commands of c-mode
+   Keystokes Command name Action     C-M-a beginning-of-defun Move to the beginning of the body of the function   C-M-e end-of-defun Move to the end of the function   C-M-h c-mark-function Put the cursor at the beginning of the function, the mark at the end   C-c C-q c-indent-defun Indent the entire function according to indention style    </description>
     </item>
     
   </channel>
