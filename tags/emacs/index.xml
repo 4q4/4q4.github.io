@@ -19,7 +19,7 @@
       <guid>/post/sth-about-emacs/</guid>
       <description>In this series, I will write something about Emacs.
 motion commands of c-mode
-   Keystokes Command name Action     C-M-a beginning-of-defun Move to the beginning of the body of the function   C-M-e end-of-defun Move to the end of the function   C-M-h c-mark-function Put the cursor at the beginning of the function, the mark at the end   C-c C-q c-indent-defun Indent the entire function according to indention style    Eshell  Mastering Eshell  </description>
+   Keystokes Command name Action     C-M-a beginning-of-defun Move to the beginning of the body of the function   C-M-e end-of-defun Move to the end of the function   C-M-h c-mark-function Put the cursor at the beginning of the function, the mark at the end   C-c C-q c-indent-defun Indent the entire function according to indention style    Eshell  Mastering Eshell Eschewing Zshell for Emacs Shell howardabrams dot-files WikiEmacs Eshell     Keystrokes Command name Action     C-c M-b eshell-insert-buffer-name Insert the printed buffer name at point   C-c M-v eshell-insert-envvar Inserts an environment variable name at point    Eshell pseudo-devices:</description>
     </item>
     
   </channel>

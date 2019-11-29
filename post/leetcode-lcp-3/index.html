@@ -19,7 +19,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/leetcode-lcp-3/" />
 <meta property="article:published_time" content="2019-11-26T00:00:00+08:00" />
-<meta property="article:modified_time" content="2019-11-27T13:43:31+08:00" />
+<meta property="article:modified_time" content="2019-11-29T12:24:07+08:00" />
 
 
 <meta name="twitter:card" content="summary"/>
@@ -38,7 +38,7 @@
 把任何一个点映射到第一个循环节中的点的方式：找到它所在的第 N 个循环节，然后横纵坐标分别减去 N * deltax 和 N * deltay ，其中 deltax 是在一个循环节中横座标的增量。
 #include &lt;vector&gt;#include &lt;iostream&gt;#include &lt;cmath&gt; using namespace std; class Solution { public: int deltax, deltay; bool robot(string command, vector&lt;vector&lt;int&gt;&gt;&amp; obstacles, int x, int y) { deltax = 0, deltay = 0; for (auto i: command) if (i == &#39;U&#39;) deltay&#43;&#43;; else deltax&#43;&#43;; for (auto i: obstacles) { if (i[0] &gt; x || i[1] &gt; y) continue; if (check(command, i[0], i[1])) return false; } return check(command, x, y); } bool check(string cmd, int x, int y) { int N, startx, starty, N1; if (cmd[0] == &#39;U&#39;) { N = ceil(1.">
 <meta itemprop="datePublished" content="2019-11-26T00:00:00&#43;08:00" />
-<meta itemprop="dateModified" content="2019-11-27T13:43:31&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-29T12:24:07&#43;08:00" />
 <meta itemprop="wordCount" content="353">
 
 
