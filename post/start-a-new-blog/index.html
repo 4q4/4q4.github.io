@@ -7,18 +7,18 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.60.0" />
 
 <link rel="canonical" href="/post/start-a-new-blog/">
 <meta property="og:title" content="start a new blog" />
 <meta property="og:description" content="generate ssh-keygen For more information, please refer to this.
-λ ssh-keygen -t rsa -b 4096 -C &quot;thanks_music163@163.com&quot;  Add public key to github
- Add ssh configuration
-Host github-thanks_music HostName github.com User git IdentityFile ~/.ssh/id_rsa_thanks_music  install Emacs package ox-hugo
-M-x list-packages  or use-package:
-(use-package ox-hugo :ensure t :after ox)  Refer to document ox-hugo.
- install hugo on macOS:
-brew update; and brew install hugo  Read the document about Hugo." />
+λ ssh-keygen -t rsa -b 4096 -C &#34;thanks_music163@163.com&#34;   Add public key to github
+  Add ssh configuration
+Host github-thanks_music HostName github.com User git IdentityFile ~/.ssh/id_rsa_thanks_music   install Emacs package ox-hugo
+M-x list-packages or use-package:
+(use-package ox-hugo :ensure t :after ox) Refer to document ox-hugo.
+  install hugo on macOS:
+brew update; and brew install hugo Read the document about Hugo." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/start-a-new-blog/" />
 <meta property="article:published_time" content="2019-11-25T00:00:00+08:00" />
@@ -27,26 +27,24 @@ brew update; and brew install hugo  Read the document about Hugo." />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="start a new blog"/>
 <meta name="twitter:description" content="generate ssh-keygen For more information, please refer to this.
-λ ssh-keygen -t rsa -b 4096 -C &quot;thanks_music163@163.com&quot;  Add public key to github
- Add ssh configuration
-Host github-thanks_music HostName github.com User git IdentityFile ~/.ssh/id_rsa_thanks_music  install Emacs package ox-hugo
-M-x list-packages  or use-package:
-(use-package ox-hugo :ensure t :after ox)  Refer to document ox-hugo.
- install hugo on macOS:
-brew update; and brew install hugo  Read the document about Hugo."/>
+λ ssh-keygen -t rsa -b 4096 -C &#34;thanks_music163@163.com&#34;   Add public key to github
+  Add ssh configuration
+Host github-thanks_music HostName github.com User git IdentityFile ~/.ssh/id_rsa_thanks_music   install Emacs package ox-hugo
+M-x list-packages or use-package:
+(use-package ox-hugo :ensure t :after ox) Refer to document ox-hugo.
+  install hugo on macOS:
+brew update; and brew install hugo Read the document about Hugo."/>
 
 
 <meta itemprop="name" content="start a new blog">
 <meta itemprop="description" content="generate ssh-keygen For more information, please refer to this.
-λ ssh-keygen -t rsa -b 4096 -C &quot;thanks_music163@163.com&quot;  Add public key to github
- Add ssh configuration
-Host github-thanks_music HostName github.com User git IdentityFile ~/.ssh/id_rsa_thanks_music  install Emacs package ox-hugo
-M-x list-packages  or use-package:
-(use-package ox-hugo :ensure t :after ox)  Refer to document ox-hugo.
- install hugo on macOS:
-brew update; and brew install hugo  Read the document about Hugo.">
-
-
+λ ssh-keygen -t rsa -b 4096 -C &#34;thanks_music163@163.com&#34;   Add public key to github
+  Add ssh configuration
+Host github-thanks_music HostName github.com User git IdentityFile ~/.ssh/id_rsa_thanks_music   install Emacs package ox-hugo
+M-x list-packages or use-package:
+(use-package ox-hugo :ensure t :after ox) Refer to document ox-hugo.
+  install hugo on macOS:
+brew update; and brew install hugo Read the document about Hugo.">
 <meta itemprop="datePublished" content="2019-11-25T00:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-11-26T19:03:12&#43;08:00" />
 <meta itemprop="wordCount" content="106">
@@ -54,7 +52,6 @@ brew update; and brew install hugo  Read the document about Hugo.">
 
 
 <meta itemprop="keywords" content="blog,hugo," />
-
 
 <link rel="stylesheet" href="/css/layout.css" />
 
@@ -136,64 +133,55 @@ if (!doNotTrack) {
 <article class="post">
     <h1 class="title"> start a new blog </h1>
     <div class="content"> <ol>
-<li><p>generate ssh-keygen
+<li>
+<p>generate ssh-keygen
 For more information, please refer to <a href="https://help.github.com/en/enterprise/2.17/user/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">this</a>.</p>
-
-<pre><code class="language-sh">    λ ssh-keygen -t rsa -b 4096 -C &quot;thanks_music163@163.com&quot;
-</code></pre></li>
-
-<li><p>Add public key to github</p></li>
-
-<li><p>Add ssh configuration</p>
-
-<pre><code class="language-sh">Host github-thanks_music
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    λ ssh-keygen -t rsa -b <span style="color:#ae81ff">4096</span> -C <span style="color:#e6db74">&#34;thanks_music163@163.com&#34;</span>
+</code></pre></div></li>
+<li>
+<p>Add public key to github</p>
+</li>
+<li>
+<p>Add ssh configuration</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">Host github-thanks_music
      HostName github.com
      User git
      IdentityFile ~/.ssh/id_rsa_thanks_music
-</code></pre></li>
-
-<li><p>install Emacs package <code>ox-hugo</code></p>
-
-<pre><code class="language-emacs-lisp">M-x list-packages
-</code></pre>
-
-<p>or <code>use-package</code>:</p>
-
-<pre><code class="language-emacs-lisp">(use-package ox-hugo
-  :ensure t
+</code></pre></div></li>
+<li>
+<p>install Emacs package <code>ox-hugo</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">M-x list-packages
+</code></pre></div><p>or <code>use-package</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package ox-hugo
+  :ensure <span style="color:#66d9ef">t</span>
   :after ox)
-</code></pre>
-
-<p>Refer to document <a href="https://ox-hugo.scripter.co/">ox-hugo</a>.</p></li>
-
-<li><p>install hugo
+</code></pre></div><p>Refer to document <a href="https://ox-hugo.scripter.co/">ox-hugo</a>.</p>
+</li>
+<li>
+<p>install hugo
 on macOS:</p>
-
-<pre><code class="language-fish">brew update; and brew install hugo
-</code></pre>
-
-<p>Read the document about Hugo. Learn some basic terms and knowledge about Hugo.
-Refer to <a href="https://gohugo.io/getting-started/installing">this</a>.</p></li>
-
-<li><p>read others&rsquo; configuration</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fish" data-lang="fish">brew update; <span style="color:#66d9ef">and</span> brew install hugo
+</code></pre></div><p>Read the document about Hugo. Learn some basic terms and knowledge about Hugo.
+Refer to <a href="https://gohugo.io/getting-started/installing">this</a>.</p>
+</li>
+<li>
+<p>read others&rsquo; configuration</p>
 <ul>
 <li><a href="https://github.com/BloggerBust/bloggerbust.ca/blob/master/config.toml">https://github.com/BloggerBust/bloggerbust.ca/blob/master/config.toml</a></li>
 <li><a href="https://github.com/kaushalmodi/ox-hugo/blob/master/doc/config.toml">https://github.com/kaushalmodi/ox-hugo/blob/master/doc/config.toml</a></li>
 <li><a href="https://github.com/kaushalmodi/ox-hugo/blob/master/test/site/config.toml">https://github.com/kaushalmodi/ox-hugo/blob/master/test/site/config.toml</a></li>
 </ul>
-
 <p>read ox-hugo <a href="https://ox-hugo.scripter.co/doc/dates/">official document</a>.</p>
-
-<p>also refer to <a href="https://github.com/gyorb/hugo-dusk">hugo-dusk configuration</a>.</p></li>
-
-<li><p>setup Discus and Google Analytics</p></li>
-
-<li><p>deploy to github</p>
-
-<p>refer to <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">this</a>.</p></li>
+<p>also refer to <a href="https://github.com/gyorb/hugo-dusk">hugo-dusk configuration</a>.</p>
+</li>
+<li>
+<p>setup Discus and Google Analytics</p>
+</li>
+<li>
+<p>deploy to github</p>
+<p>refer to <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">this</a>.</p>
+</li>
 </ol>
-
 <p>Happy Blogging. :P</p>
  </div>
     <footer class="post-footer">

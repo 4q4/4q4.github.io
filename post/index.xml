@@ -21,7 +21,7 @@
 这道题目考察对循环节的理解。开始想得有点儿复杂，分析之后可以发现，关键是如何判断某个点是否在路径上。由于坐标范围过大，显然不能把整条路径计算出来。但是由于整个路径是由相同的路径连起来的，所以考虑循环节。对于一个障碍，找到这个点对应的循环节的起点，然后从起点开始，按照命令把这个循环节里面的点都求一遍，如果某个点 能够和这个障碍相等，那么说明可以碰到障碍。对于终点，同样的处理方式，如果所在循环节中的某个点和终点相等，那么说明可以到达终点。命令的个数是 10^3 障碍个数也是 10^3 所以整个复杂度是 10^6 。这是可以接受的。
 不过这种对循环节的处理方式不是很优雅，其实可以把任何一个循环节都对应到第一个循环，然后把这个循环节对应的障碍点也对应到第一个循环节的范围中。这样可以就把第一个循环节的所有的点放到集合中，然后只需要判断障碍点是不是在集合中即可。把点放到集合中的处理方式有很多，可以拼接成字符串，也可以通过其它处理方式，只要保证是一一映射即可。讨论区中看到一种比较有趣的做法，对于一个点 (x, y) 把它映射成一个整数 (long)(x) &amp;lt;&amp;lt; 30 | y 这是由于题目中点的坐标范围是 10^9 而 10^9 &amp;lt; (1L &amp;lt;&amp;lt; 30) ，所以这可以保证是一一映射。
 把任何一个点映射到第一个循环节中的点的方式：找到它所在的第 N 个循环节，然后横纵坐标分别减去 N * deltax 和 N * deltay ，其中 deltax 是在一个循环节中横座标的增量。
-#include &amp;lt;vector&amp;gt; #include &amp;lt;iostream&amp;gt; #include &amp;lt;cmath&amp;gt; using namespace std; class Solution { public: int deltax, deltay; bool robot(string command, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; obstacles, int x, int y) { deltax = 0, deltay = 0; for (auto i: command) if (i == &#39;U&#39;) deltay++; else deltax++; for (auto i: obstacles) { if (i[0] &amp;gt; x || i[1] &amp;gt; y) continue; if (check(command, i[0], i[1], i[0], i[1])) return false; } return check(command, x, y, x, y); } bool check(string cmd, int x, int y, int X, int Y) { int N, startx, starty, N1; if (cmd[0] == &#39;U&#39;) { N = ceil(1.</description>
+#include &amp;lt;vector&amp;gt;#include &amp;lt;iostream&amp;gt;#include &amp;lt;cmath&amp;gt; using namespace std; class Solution { public: int deltax, deltay; bool robot(string command, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; obstacles, int x, int y) { deltax = 0, deltay = 0; for (auto i: command) if (i == &amp;#39;U&amp;#39;) deltay++; else deltax++; for (auto i: obstacles) { if (i[0] &amp;gt; x || i[1] &amp;gt; y) continue; if (check(command, i[0], i[1])) return false; } return check(command, x, y); } bool check(string cmd, int x, int y) { int N, startx, starty, N1; if (cmd[0] == &amp;#39;U&amp;#39;) { N = ceil(1.</description>
     </item>
     
     <item>
@@ -31,7 +31,9 @@
       
       <guid>/post/random-links/</guid>
       <description>There are some random interesting links I found on the Internet.
- EMACS-DOCUMENT Jack Baty&amp;rsquo;s weblog Ken Grimes Computer are the Devil Real World Examples blogs using hugo Blogger Bust ZHENG Zi&amp;rsquo;ou 零壹軒·笔记 wicast&amp;rsquo;s TNT Pygments style gallery  </description>
+ EMACS-DOCUMENT Jack Baty&#39;s weblog Ken Grimes Computer are the Devil Real World Examples blogs using hugo Blogger Bust ZHENG Zi&#39;ou 零壹軒·笔记 wicast&#39;s TNT Pygments style gallery 鸟窝  Learning resources:
+ forum.fast.ai course fast.ai  eBooks:
+ Project Gutenberg  </description>
     </item>
     
     <item>
@@ -42,7 +44,7 @@
       <guid>/post/sth-about-emacs/</guid>
       <description>In this series, I will write something about Emacs.
 motion commands of c-mode
-   Keystokes Command name Action     C-M-a beginning-of-defun Move to the beginning of the body of the function   C-M-e end-of-defun Move to the end of the function   C-M-h c-mark-function Put the cursor at the beginning of the function, the mark at the end   C-c C-q c-indent-defun Indent the entire function according to indention style    </description>
+   Keystokes Command name Action     C-M-a beginning-of-defun Move to the beginning of the body of the function   C-M-e end-of-defun Move to the end of the function   C-M-h c-mark-function Put the cursor at the beginning of the function, the mark at the end   C-c C-q c-indent-defun Indent the entire function according to indention style    Eshell  Mastering Eshell  </description>
     </item>
     
     <item>
@@ -52,13 +54,13 @@ motion commands of c-mode
       
       <guid>/post/start-a-new-blog/</guid>
       <description>generate ssh-keygen For more information, please refer to this.
-λ ssh-keygen -t rsa -b 4096 -C &amp;quot;thanks_music163@163.com&amp;quot;  Add public key to github
- Add ssh configuration
-Host github-thanks_music HostName github.com User git IdentityFile ~/.ssh/id_rsa_thanks_music  install Emacs package ox-hugo
-M-x list-packages  or use-package:
-(use-package ox-hugo :ensure t :after ox)  Refer to document ox-hugo.
- install hugo on macOS:
-brew update; and brew install hugo  Read the document about Hugo.</description>
+λ ssh-keygen -t rsa -b 4096 -C &amp;#34;thanks_music163@163.com&amp;#34;   Add public key to github
+  Add ssh configuration
+Host github-thanks_music HostName github.com User git IdentityFile ~/.ssh/id_rsa_thanks_music   install Emacs package ox-hugo
+M-x list-packages or use-package:
+(use-package ox-hugo :ensure t :after ox) Refer to document ox-hugo.
+  install hugo on macOS:
+brew update; and brew install hugo Read the document about Hugo.</description>
     </item>
     
   </channel>

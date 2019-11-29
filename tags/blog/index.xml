@@ -18,7 +18,9 @@
       
       <guid>/post/random-links/</guid>
       <description>There are some random interesting links I found on the Internet.
- EMACS-DOCUMENT Jack Baty&amp;rsquo;s weblog Ken Grimes Computer are the Devil Real World Examples blogs using hugo Blogger Bust ZHENG Zi&amp;rsquo;ou 零壹軒·笔记 wicast&amp;rsquo;s TNT Pygments style gallery  </description>
+ EMACS-DOCUMENT Jack Baty&#39;s weblog Ken Grimes Computer are the Devil Real World Examples blogs using hugo Blogger Bust ZHENG Zi&#39;ou 零壹軒·笔记 wicast&#39;s TNT Pygments style gallery 鸟窝  Learning resources:
+ forum.fast.ai course fast.ai  eBooks:
+ Project Gutenberg  </description>
     </item>
     
     <item>
@@ -28,13 +30,13 @@
       
       <guid>/post/start-a-new-blog/</guid>
       <description>generate ssh-keygen For more information, please refer to this.
-λ ssh-keygen -t rsa -b 4096 -C &amp;quot;thanks_music163@163.com&amp;quot;  Add public key to github
- Add ssh configuration
-Host github-thanks_music HostName github.com User git IdentityFile ~/.ssh/id_rsa_thanks_music  install Emacs package ox-hugo
-M-x list-packages  or use-package:
-(use-package ox-hugo :ensure t :after ox)  Refer to document ox-hugo.
- install hugo on macOS:
-brew update; and brew install hugo  Read the document about Hugo.</description>
+λ ssh-keygen -t rsa -b 4096 -C &amp;#34;thanks_music163@163.com&amp;#34;   Add public key to github
+  Add ssh configuration
+Host github-thanks_music HostName github.com User git IdentityFile ~/.ssh/id_rsa_thanks_music   install Emacs package ox-hugo
+M-x list-packages or use-package:
+(use-package ox-hugo :ensure t :after ox) Refer to document ox-hugo.
+  install hugo on macOS:
+brew update; and brew install hugo Read the document about Hugo.</description>
     </item>
     
   </channel>
