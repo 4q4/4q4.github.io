@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>LeetCode on Do sth. Slowly</title>
@@ -18,10 +18,12 @@
       
       <guid>/post/leetcode-lcp-3/</guid>
       <description>LeetCode LCP 3. 机器人大冒险
-这道题目考察对循环节的理解。开始想得有点儿复杂，分析之后可以发现，关键是如何判断某个点是否在路径上。由于坐标范围过大，显然不能把整条路径计算出来。但是由于整个路径是由相同的路径连起来的，所以考虑循环节。对于一个障碍，找到这个点对应的循环节的起点，然后从起点开始，按照命令把这个循环节里面的点都求一遍，如果某个点 能够和这个障碍相等，那么说明可以碰到障碍。对于终点，同样的处理方式，如果所在循环节中的某个点和终点相等，那么说明可以到达终点。命令的个数是 10^3 障碍个数也是 10^3 所以整个复杂度是 10^6 。这是可以接受的。
-不过这种对循环节的处理方式不是很优雅，其实可以把任何一个循环节都对应到第一个循环，然后把这个循环节对应的障碍点也对应到第一个循环节的范围中。这样可以就把第一个循环节的所有的点放到集合中，然后只需要判断障碍点是不是在集合中即可。把点放到集合中的处理方式有很多，可以拼接成字符串，也可以通过其它处理方式，只要保证是一一映射即可。讨论区中看到一种比较有趣的做法，对于一个点 (x, y) 把它映射成一个整数 (long)(x) &amp;lt;&amp;lt; 30 | y 这是由于题目中点的坐标范围是 10^9 而 10^9 &amp;lt; (1L &amp;lt;&amp;lt; 30) ，所以这可以保证是一一映射。
+这道题目考察对循环节的理解。开始想得有点儿复杂，分析之后可以发现，关键是如何判断某个点是否在路径上。由于坐标范围过大，显然不能把整条路径计算出来。但是由于整个路径是由相同的路径连起来的，所以考虑循环节。对于一个障碍，找到这个点对应的循环节的起点，然后从起点开始，按照命令把这个循环节里面的点都求一遍，如果某个点能够和这个障碍相等，那么说明可以碰到障碍。对于终点，同样的处理方式，如果所在循环节中的某个点和终点相等，那么说明可以到达终点。命令的个数是 10^3 障碍个数也是 10^3 所以整个复杂度是 10^6 。这是可以接受的。
+可以看出整个过程主要的复杂度是如何判断某个障碍是否和对应的循环节中的某个点重合。
+上面这种对循环节的处理方式不是很优雅，其实可以把任何一个循环节都对应到第一个循环，然后把这个循环节对应的障碍点也对应到第一个循环节的范围中。这样可以就把第一个循环节的所有的点放到集合中，然后只需要判断障碍点是不是在集合中即可。把点放到集合中的处理方式有很多，可以拼接成字符串，也可以通过其它处理方式，只要保证是一一映射即可。讨论区中看到一种比较有趣的做法，对于一个点 (x, y) 把它映射成一个整数 (long)(x) &amp;lt;&amp;lt; 30 | y 这是由于题目中点的坐标范围是 10^9 而 10^9 &amp;lt; (1L &amp;lt;&amp;lt; 30) ，所以这可以保证是一一映射。
 把任何一个点映射到第一个循环节中的点的方式：找到它所在的第 N 个循环节，然后横纵坐标分别减去 N * deltax 和 N * deltay ，其中 deltax 是在一个循环节中横座标的增量。
-#include &amp;lt;vector&amp;gt;#include &amp;lt;iostream&amp;gt;#include &amp;lt;cmath&amp;gt; using namespace std; class Solution { public: int deltax, deltay; bool robot(string command, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; obstacles, int x, int y) { deltax = 0, deltay = 0; for (auto i: command) if (i == &amp;#39;U&amp;#39;) deltay++; else deltax++; for (auto i: obstacles) { if (i[0] &amp;gt; x || i[1] &amp;gt; y) continue; if (check(command, i[0], i[1])) return false; } return check(command, x, y); } bool check(string cmd, int x, int y) { int N, startx, starty, N1; if (cmd[0] == &amp;#39;U&amp;#39;) { N = ceil(1.</description>
+所以说做题的时候，有的时候虽然能够做出来，可是还是不能够想到最简单和最优雅的处理方式。还是需要多练习和积累经验。一道题目是值得多次做的，做过第一遍之后，以后应该写出最优的解法和实现方式。
+#include &amp;lt;vector&amp;gt; #include &amp;lt;iostream&amp;gt; #include &amp;lt;cmath&amp;gt; using namespace std; class Solution { public: int deltax, deltay; bool robot(string command, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; obstacles, int x, int y) { deltax = 0, deltay = 0; for (auto i: command) if (i == &#39;U&#39;) deltay++; else deltax++; for (auto i: obstacles) { if (i[0] &amp;gt; x || i[1] &amp;gt; y) continue; if (check(command, i[0], i[1])) return false; } return check(command, x, y); } bool check(string cmd, int x, int y) { int N, startx, starty, N1; if (cmd[0] == &#39;U&#39;) { N = ceil(1.</description>
     </item>
     
   </channel>

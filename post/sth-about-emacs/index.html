@@ -7,7 +7,7 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.60.0" />
+<meta name="generator" content="Hugo 0.58.3" />
 
 <link rel="canonical" href="/post/sth-about-emacs/">
 <meta property="og:title" content="Something About Emacs" />
@@ -17,7 +17,7 @@ motion commands of c-mode
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/sth-about-emacs/" />
 <meta property="article:published_time" content="2019-11-25T00:00:00+08:00" />
-<meta property="article:modified_time" content="2019-11-29T12:24:07+08:00" />
+<meta property="article:modified_time" content="2019-11-30T07:41:14+08:00" />
 
 
 <meta name="twitter:card" content="summary"/>
@@ -31,13 +31,16 @@ motion commands of c-mode
 <meta itemprop="description" content="In this series, I will write something about Emacs.
 motion commands of c-mode
    Keystokes Command name Action     C-M-a beginning-of-defun Move to the beginning of the body of the function   C-M-e end-of-defun Move to the end of the function   C-M-h c-mark-function Put the cursor at the beginning of the function, the mark at the end   C-c C-q c-indent-defun Indent the entire function according to indention style    Eshell  Mastering Eshell Eschewing Zshell for Emacs Shell howardabrams dot-files WikiEmacs Eshell     Keystrokes Command name Action     C-c M-b eshell-insert-buffer-name Insert the printed buffer name at point   C-c M-v eshell-insert-envvar Inserts an environment variable name at point    Eshell pseudo-devices:">
+
+
 <meta itemprop="datePublished" content="2019-11-25T00:00:00&#43;08:00" />
-<meta itemprop="dateModified" content="2019-11-29T12:24:07&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-30T07:41:14&#43;08:00" />
 <meta itemprop="wordCount" content="132">
 
 
 
 <meta itemprop="keywords" content="emacs," />
+
 
 <link rel="stylesheet" href="/css/layout.css" />
 
@@ -118,8 +121,12 @@ if (!doNotTrack) {
 
 <article class="post">
     <h1 class="title"> Something About Emacs </h1>
-    <div class="content"> <p>In this series, I will write something about Emacs.</p>
+    <div class="content"> 
+
+<p>In this series, I will write something about Emacs.</p>
+
 <p>motion commands of c-mode</p>
+
 <table>
 <thead>
 <tr>
@@ -128,22 +135,26 @@ if (!doNotTrack) {
 <th>Action</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td>C-M-a</td>
 <td>beginning-of-defun</td>
 <td>Move to the beginning of the body of the function</td>
 </tr>
+
 <tr>
 <td>C-M-e</td>
 <td>end-of-defun</td>
 <td>Move to the end of the function</td>
 </tr>
+
 <tr>
 <td>C-M-h</td>
 <td>c-mark-function</td>
 <td>Put the cursor at the beginning of the function, the mark at the end</td>
 </tr>
+
 <tr>
 <td>C-c C-q</td>
 <td>c-indent-defun</td>
@@ -151,13 +162,16 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
+
 <h2 id="eshell">Eshell</h2>
+
 <ul>
 <li><a href="https://www.masteringemacs.org/article/complete-guide-mastering-eshell">Mastering Eshell</a></li>
 <li><a href="http://www.howardism.org/Technical/Emacs/eshell-fun.html">Eschewing Zshell for Emacs Shell</a></li>
 <li><a href="https://github.com/howardabrams/dot-files/blob/master/emacs-eshell.org">howardabrams dot-files</a></li>
 <li><a href="http://wikemacs.org/wiki/Eshell">WikiEmacs Eshell</a></li>
 </ul>
+
 <table>
 <thead>
 <tr>
@@ -166,12 +180,14 @@ if (!doNotTrack) {
 <th>Action</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td>C-c M-b</td>
 <td>eshell-insert-buffer-name</td>
 <td>Insert the printed buffer name at point</td>
 </tr>
+
 <tr>
 <td>C-c M-v</td>
 <td>eshell-insert-envvar</td>
@@ -179,11 +195,14 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
+
 <p>Eshell pseudo-devices:</p>
+
 <ul>
 <li><code>/dev/clip</code> sends the output to the clipboard</li>
 <li><code>/dev/kill</code> sends the output to the kill ring</li>
 </ul>
+
 <p>Eshell support both login and profile/rc shell script. Refer to variable <code>eshell-login-script</code> and <code>eshell-rc-script</code>.</p>
  </div>
     <footer class="post-footer">
