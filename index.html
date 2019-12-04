@@ -8,15 +8,14 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 <link rel="canonical" href="/">
 <meta property="og:title" content="Do sth. Slowly" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-
-<meta property="og:updated_time" content="2019-11-26T00:00:00+08:00" />
+<meta property="og:updated_time" content="2019-12-02T14:33:00+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Do sth. Slowly"/>
@@ -25,8 +24,6 @@
 
 <meta itemprop="name" content="Do sth. Slowly">
 <meta itemprop="description" content="">
-
-
 
 <link rel="stylesheet" href="/css/layout.css" />
 
@@ -112,6 +109,77 @@ if (!doNotTrack) {
     <article class="post-preview">
 
   <header>
+    <h2 class="title"> <a href='/post/random-books/'> Some books I read (or want to read)</a> </h2>
+    <div class="meta">
+      <div class="date">
+      2 Dec, 2019 - 1 minutes
+      </div>
+      
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/book">#book</a>
+      </div>
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    列出一些读过、正在读或者想读的书。
+DONE棋王·树王·孩子王 阿城
+&lt;2019-12-02 一 14:41&gt;这本书写得极好。文字清新优美，人物描写极其生动，读起来非常舒适，大概能够感受到那种文学的美。棋王看了至少三遍，树王由于过于压抑，看过第一遍之后不敢看第二遍，前些天看第二遍的时候，看了一般，然后隔了很久才继续看下去，才淡化那种压抑的感觉。孩子王只看过一遍，非常好看，我想我还会读第二遍。
+TODOThe Go Programming Language 这本书之前看过了大部分，只是基本都忘记了。最近正在重新读，希望能够做一些笔记。
+TODO我们生活在巨大的差距里 余华
+昨天拿出吃灰已久的 kindle 在地铁看，无意间翻到的。读起来竟然非常好看，两天利用路上的时间已读完三分之一。我想，以后还会读余华的其它作品。
+这本书讲了很多文学的故事，甚至激发起了我的阅读欲望，简直就是一个书单。
+  </div>
+
+  <div class="rmore">
+    <a href='/post/random-books/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='/post/random-thoughts/'> Some random thoughts</a> </h2>
+    <div class="meta">
+      <div class="date">
+      2 Dec, 2019 - 1 minutes
+      </div>
+      
+<div class="tags">
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    &lt;2019-12-02 一 11:47&gt; 读书一定要作笔记，否则读过之后过一周，基本就会忘记。技术书尤甚。作笔记的过程也是整理和内化知识的过程，可以帮助理解和记忆。笔记不一定要十分详细，但是一定要有自己的思考。
+多阅读其他人的代码，其它项目的代码，学习设计思想和编码技巧。水平提高之后，尝试去阅读开源项目的代码，从项目中学习。
+&lt;2019-12-04 三 18:06&gt;这两天发现 MacBook Air 2013 总是时不时风扇狂转，看 Monitor 发现是 WindowServer 这个进程占用 CPU 比较高，过一会儿就恢复了，再过一会儿又开始，循环往复。去搜了一下，试过了各种方法：禁用掉透明效果等，都没有用。猜是不是因为新版本系统 Catalina 的问题，是不是要重新安装一下旧版本的系统，不过又太麻烦了。后来看到一篇文章说这个进程可能和绘制窗口和图像有关，如果外接了显示器可能也会造成这个进程 CPU 占用提高。然后我把外接显示器断开，过了一会儿发现没有那个问题了。问题解决！
+中午去公司另外一个办公地点，等人的时候发现墙边的借书架上有一本计算机程序设计的艺术，第四卷组合数学，中文版的，纸张很不错，无聊就读了前言，看起来好厉害。
+  </div>
+
+  <div class="rmore">
+    <a href='/post/random-thoughts/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
     <h2 class="title"> <a href='/post/leetcode-lcp-3/'> LeetCode LCP 3. 机器人大冒险</a> </h2>
     <div class="meta">
       <div class="date">
@@ -141,7 +209,7 @@ if (!doNotTrack) {
 上面这种对循环节的处理方式不是很优雅，其实可以把任何一个循环节都对应到第一个循环，然后把这个循环节对应的障碍点也对应到第一个循环节的范围中。这样可以就把第一个循环节的所有的点放到集合中，然后只需要判断障碍点是不是在集合中即可。把点放到集合中的处理方式有很多，可以拼接成字符串，也可以通过其它处理方式，只要保证是一一映射即可。讨论区中看到一种比较有趣的做法，对于一个点 (x, y) 把它映射成一个整数 (long)(x) &lt;&lt; 30 | y 这是由于题目中点的坐标范围是 10^9 而 10^9 &lt; (1L &lt;&lt; 30) ，所以这可以保证是一一映射。
 把任何一个点映射到第一个循环节中的点的方式：找到它所在的第 N 个循环节，然后横纵坐标分别减去 N * deltax 和 N * deltay ，其中 deltax 是在一个循环节中横座标的增量。
 所以说做题的时候，有的时候虽然能够做出来，可是还是不能够想到最简单和最优雅的处理方式。还是需要多练习和积累经验。一道题目是值得多次做的，做过第一遍之后，以后应该写出最优的解法和实现方式。
-#include &lt;vector&gt; #include &lt;iostream&gt; #include &lt;cmath&gt; using namespace std; class Solution { public: int deltax, deltay; bool robot(string command, vector&lt;vector&lt;int&gt;&gt;&amp; obstacles, int x, int y) { deltax = 0, deltay = 0; for (auto i: command) if (i == 'U') deltay++; else deltax++; for (auto i: obstacles) { if (i[0] &gt; x || i[1] &gt; y) continue; if (check(command, i[0], i[1])) return false; } return check(command, x, y); } bool check(string cmd, int x, int y) { int N, startx, starty, N1; if (cmd[0] == 'U') { N = ceil(1.
+#include &lt;vector&gt;#include &lt;iostream&gt;#include &lt;cmath&gt; using namespace std; class Solution { public: int deltax, deltay; bool robot(string command, vector&lt;vector&lt;int&gt;&gt;&amp; obstacles, int x, int y) { deltax = 0, deltay = 0; for (auto i: command) if (i == &#39;U&#39;) deltay++; else deltax++; for (auto i: obstacles) { if (i[0] &gt; x || i[1] &gt; y) continue; if (check(command, i[0], i[1])) return false; } return check(command, x, y); } bool check(string cmd, int x, int y) { int N, startx, starty, N1; if (cmd[0] == &#39;U&#39;) { N = ceil(1.
   </div>
 
   <div class="rmore">
@@ -175,10 +243,11 @@ if (!doNotTrack) {
 
   <div class="summary">
     There are some random interesting links I found on the Internet.
- EMACS-DOCUMENT Jack Baty&rsquo;s weblog Ken Grimes Computer are the Devil Real World Examples blogs using hugo Blogger Bust ZHENG Zi&rsquo;ou 零壹軒·笔记 wicast&rsquo;s TNT Pygments style gallery 鸟窝  Learning resources:
+ matrix67  考据癖 虎兔手记   BYVoid MaskRay EMACS-DOCUMENT Jack Baty's weblog Ken Grimes Computer are the Devil Real World Examples blogs using hugo Blogger Bust ZHENG Zi'ou 零壹軒·笔记 wicast's TNT Pygments style gallery 鸟窝 木子  Learning resources:
  forum.fast.ai course fast.ai  eBooks:
  Project Gutenberg  Emacs:
- Howardisms  
+ Howardisms  Linux:
+ HOWTO do Linux Kernel development  
   </div>
 
   <div class="rmore">
@@ -251,13 +320,13 @@ motion commands of c-mode
 
   <div class="summary">
     generate ssh-keygen For more information, please refer to this.
-λ ssh-keygen -t rsa -b 4096 -C &quot;thanks_music163@163.com&quot;  Add public key to github
- Add ssh configuration
-Host github-thanks_music HostName github.com User git IdentityFile ~/.ssh/id_rsa_thanks_music  install Emacs package ox-hugo
-M-x list-packages  or use-package:
-(use-package ox-hugo :ensure t :after ox)  Refer to document ox-hugo.
- install hugo on macOS:
-brew update; and brew install hugo  Read the document about Hugo.
+λ ssh-keygen -t rsa -b 4096 -C &#34;thanks_music163@163.com&#34;   Add public key to github
+  Add ssh configuration
+Host github-thanks_music HostName github.com User git IdentityFile ~/.ssh/id_rsa_thanks_music   install Emacs package ox-hugo
+M-x list-packages or use-package:
+(use-package ox-hugo :ensure t :after ox) Refer to document ox-hugo.
+  install hugo on macOS:
+brew update; and brew install hugo Read the document about Hugo.
   </div>
 
   <div class="rmore">

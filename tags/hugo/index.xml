@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hugo on Do sth. Slowly</title>
@@ -18,13 +18,13 @@
       
       <guid>/post/start-a-new-blog/</guid>
       <description>generate ssh-keygen For more information, please refer to this.
-λ ssh-keygen -t rsa -b 4096 -C &amp;quot;thanks_music163@163.com&amp;quot;  Add public key to github
- Add ssh configuration
-Host github-thanks_music HostName github.com User git IdentityFile ~/.ssh/id_rsa_thanks_music  install Emacs package ox-hugo
-M-x list-packages  or use-package:
-(use-package ox-hugo :ensure t :after ox)  Refer to document ox-hugo.
- install hugo on macOS:
-brew update; and brew install hugo  Read the document about Hugo.</description>
+λ ssh-keygen -t rsa -b 4096 -C &amp;#34;thanks_music163@163.com&amp;#34;   Add public key to github
+  Add ssh configuration
+Host github-thanks_music HostName github.com User git IdentityFile ~/.ssh/id_rsa_thanks_music   install Emacs package ox-hugo
+M-x list-packages or use-package:
+(use-package ox-hugo :ensure t :after ox) Refer to document ox-hugo.
+  install hugo on macOS:
+brew update; and brew install hugo Read the document about Hugo.</description>
     </item>
     
   </channel>
