@@ -6,10 +6,22 @@
     <description>Recent content in algorithm on Do sth. Slowly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 26 Nov 2019 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 27 Nov 2019 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LeetCode 1268. 搜索推荐系统</title>
+      <link>/post/leetcode-1268/</link>
+      <pubDate>Wed, 27 Nov 2019 00:00:00 +0800</pubDate>
+      
+      <guid>/post/leetcode-1268/</guid>
+      <description>LeetCode 1268. 搜索推荐系统
+输入一个词典，然后输入一个单词，对于单词的每一个前缀，输出字典中以这个前缀开始的单词的字典序最小的 3 个单词。词典长度 1000，词典中每个单词的长度 20000，目标单词长度 1000.
+这道题目开始的想法是字典树。可是数据集的范围太大，字典树占用空间太大。然而也没有想到什么好的方法，最后还是用常规的字典树写了一下，竟然过了。
+#include &amp;lt;iostream&amp;gt;#include &amp;lt;vector&amp;gt;#include &amp;lt;string&amp;gt;#include &amp;lt;stack&amp;gt; using namespace std; using VS = vector&amp;lt;string&amp;gt;; struct TrieTree { char value; bool is_end; TrieTree *children[26]; TrieTree() { for (int i = 0; i &amp;lt; 26; i++) children[i] = nullptr; is_end = false; } }; void insert_word(TrieTree *root, string s) { for (auto x: s) { int pos = x - &amp;#39;a&amp;#39;; if (nullptr != root-&amp;gt;children[pos]) { root = root-&amp;gt;children[pos]; } else { TrieTree *tmp = new TrieTree(); tmp-&amp;gt;value = x; root-&amp;gt;children[pos] = tmp; root = tmp; } } root-&amp;gt;is_end = true; } void print_tree(TrieTree *root, string s, vector&amp;lt;string&amp;gt; &amp;amp;words) { for (int i = 0; i &amp;lt; 26; i++) { TrieTree *child = root-&amp;gt;children[i]; if (nullptr !</description>
+    </item>
     
     <item>
       <title>LeetCode LCP 3. 机器人大冒险</title>

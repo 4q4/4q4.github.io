@@ -133,8 +133,8 @@ DONE棋王·树王·孩子王 阿城
 &lt;2019-12-02 一 14:41&gt;这本书写得极好。文字清新优美，人物描写极其生动，读起来非常舒适，大概能够感受到那种文学的美。棋王看了至少三遍，树王由于过于压抑，看过第一遍之后不敢看第二遍，前些天看第二遍的时候，看了一般，然后隔了很久才继续看下去，才淡化那种压抑的感觉。孩子王只看过一遍，非常好看，我想我还会读第二遍。
 TODOThe Go Programming Language 这本书之前看过了大部分，只是基本都忘记了。最近正在重新读，希望能够做一些笔记。
 TODO我们生活在巨大的差距里 余华
-昨天拿出吃灰已久的 kindle 在地铁看，无意间翻到的。读起来竟然非常好看，两天利用路上的时间已读完三分之一。我想，以后还会读余华的其它作品。
-这本书讲了很多文学的故事，甚至激发起了我的阅读欲望，简直就是一个书单。
+&lt;2019-12-02 一 14:33&gt;昨天拿出吃灰已久的 kindle 在地铁看，无意间翻到的。读起来竟然非常好看，两天利用路上的时间已读完三分之一。我想，以后还会读余华的其它作品。
+&lt;2019-12-04 三 18:19&gt;这本书讲了很多文学的故事，甚至激发起了我的阅读欲望，简直就是一个书单。
   </div>
 
   <div class="rmore">
@@ -171,6 +171,46 @@ TODO我们生活在巨大的差距里 余华
 
   <div class="rmore">
     <a href='/post/random-thoughts/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='/post/leetcode-1268/'> LeetCode 1268. 搜索推荐系统</a> </h2>
+    <div class="meta">
+      <div class="date">
+      27 Nov, 2019 - 3 minutes
+      </div>
+      
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/leetcode">#LeetCode</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/algorithm">#algorithm</a>
+      </div>
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    LeetCode 1268. 搜索推荐系统
+输入一个词典，然后输入一个单词，对于单词的每一个前缀，输出字典中以这个前缀开始的单词的字典序最小的 3 个单词。词典长度 1000，词典中每个单词的长度 20000，目标单词长度 1000.
+这道题目开始的想法是字典树。可是数据集的范围太大，字典树占用空间太大。然而也没有想到什么好的方法，最后还是用常规的字典树写了一下，竟然过了。
+#include &lt;iostream&gt;#include &lt;vector&gt;#include &lt;string&gt;#include &lt;stack&gt; using namespace std; using VS = vector&lt;string&gt;; struct TrieTree { char value; bool is_end; TrieTree *children[26]; TrieTree() { for (int i = 0; i &lt; 26; i++) children[i] = nullptr; is_end = false; } }; void insert_word(TrieTree *root, string s) { for (auto x: s) { int pos = x - &#39;a&#39;; if (nullptr != root-&gt;children[pos]) { root = root-&gt;children[pos]; } else { TrieTree *tmp = new TrieTree(); tmp-&gt;value = x; root-&gt;children[pos] = tmp; root = tmp; } } root-&gt;is_end = true; } void print_tree(TrieTree *root, string s, vector&lt;string&gt; &amp;words) { for (int i = 0; i &lt; 26; i++) { TrieTree *child = root-&gt;children[i]; if (nullptr !
+  </div>
+
+  <div class="rmore">
+    <a href='/post/leetcode-1268/' class="rmore">Read more</a>
   </div>
 
 
@@ -243,11 +283,8 @@ TODO我们生活在巨大的差距里 余华
 
   <div class="summary">
     There are some random interesting links I found on the Internet.
- matrix67  考据癖 虎兔手记   BYVoid MaskRay EMACS-DOCUMENT Jack Baty's weblog Ken Grimes Computer are the Devil Real World Examples blogs using hugo Blogger Bust ZHENG Zi'ou 零壹軒·笔记 wicast's TNT Pygments style gallery 鸟窝 木子  Learning resources:
+ matrix67  考据癖 虎兔手记   BYVoid MaskRay Ruchee 的荒草园子 How I Switched To Plan 9 An overview of the monad EMACS-DOCUMENT Jack Baty's weblog Ken Grimes Computer are the Devil Real World Examples blogs using hugo Blogger Bust ZHENG Zi'ou 零壹軒·笔记 wicast's TNT Pygments style gallery 鸟窝 木子  Learning resources:
  forum.fast.ai course fast.ai  eBooks:
- Project Gutenberg  Emacs:
- Howardisms  Linux:
- HOWTO do Linux Kernel development  
   </div>
 
   <div class="rmore">

@@ -14,7 +14,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/series/solution-to-leetcode-problems/" />
-<meta property="og:updated_time" content="2019-11-26T00:00:00+08:00" />
+<meta property="og:updated_time" content="2019-11-27T00:00:00+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Solution to LeetCode Problems"/>
@@ -104,6 +104,46 @@ if (!doNotTrack) {
 <h2 class="term-list-title">
     <a href="/series/solution-to-leetcode-problems/" class="linktopost">series: Solution to LeetCode Problems</a>
 </h2>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='/post/leetcode-1268/'> LeetCode 1268. 搜索推荐系统</a> </h2>
+    <div class="meta">
+      <div class="date">
+      27 Nov, 2019 - 3 minutes
+      </div>
+      
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/leetcode">#LeetCode</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/algorithm">#algorithm</a>
+      </div>
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    LeetCode 1268. 搜索推荐系统
+输入一个词典，然后输入一个单词，对于单词的每一个前缀，输出字典中以这个前缀开始的单词的字典序最小的 3 个单词。词典长度 1000，词典中每个单词的长度 20000，目标单词长度 1000.
+这道题目开始的想法是字典树。可是数据集的范围太大，字典树占用空间太大。然而也没有想到什么好的方法，最后还是用常规的字典树写了一下，竟然过了。
+#include &lt;iostream&gt;#include &lt;vector&gt;#include &lt;string&gt;#include &lt;stack&gt; using namespace std; using VS = vector&lt;string&gt;; struct TrieTree { char value; bool is_end; TrieTree *children[26]; TrieTree() { for (int i = 0; i &lt; 26; i++) children[i] = nullptr; is_end = false; } }; void insert_word(TrieTree *root, string s) { for (auto x: s) { int pos = x - &#39;a&#39;; if (nullptr != root-&gt;children[pos]) { root = root-&gt;children[pos]; } else { TrieTree *tmp = new TrieTree(); tmp-&gt;value = x; root-&gt;children[pos] = tmp; root = tmp; } } root-&gt;is_end = true; } void print_tree(TrieTree *root, string s, vector&lt;string&gt; &amp;words) { for (int i = 0; i &lt; 26; i++) { TrieTree *child = root-&gt;children[i]; if (nullptr !
+  </div>
+
+  <div class="rmore">
+    <a href='/post/leetcode-1268/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
 
 
     <article class="post-preview">
