@@ -243,7 +243,7 @@ if (!doNotTrack) {
   <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
 </code></pre></div><p>可见 LeetCode 上的数据是很弱的。之前已经遇到过很多类似的情况。不过，至少这道题目练习了一下字典树的写法。</p>
-<p>然后看了一下题解，果然是字典树，不过有一些优化。由于我们只需要字典序的前 3 个，为了更加方便地取得结果，我们可以把这 3 个单词保存在节点上，这样对每个单词前缀，我只需要找到对应的节点，然后把节点上的 3 个单词取出来就好了，而不用每次都去遍历子树。由于需要字典序最小的 3 个，所以可以维护一个大小为 3 的优先队列。另外，对与字典树的实现方式，节点中可以不用数组，直接使用 unordered_map 就好，实现也方便，也不会成为性能瓶颈。</p>
+<p>然后看了一下题解，果然是字典树，不过有一些优化。由于我们只需要字典序的前 3 个，为了更加方便地取得结果，我们可以把这 3 个单词保存在节点上，这样对每个单词前缀，我只需要找到对应的节点，然后把节点上的 3 个单词取出来就好了，而不用每次都去遍历子树。由于需要字典序最小的 3 个，所以可以维护一个大小为 3 的优先队列。另外，对于字典树的实现方式，节点中可以不用数组，直接使用 unordered_map 就好，实现也方便，也不会成为性能瓶颈。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">TrieTree2</span>
 {
   priority_queue<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> words;
