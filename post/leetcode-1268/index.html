@@ -18,7 +18,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/leetcode-1268/" />
 <meta property="article:published_time" content="2019-11-27T00:00:00+08:00" />
-<meta property="article:modified_time" content="2019-11-30T23:29:42+08:00" />
+<meta property="article:modified_time" content="2019-12-09T21:20:19+08:00" />
 
 
 <meta name="twitter:card" content="summary"/>
@@ -35,7 +35,7 @@
 这道题目开始的想法是字典树。可是数据集的范围太大，字典树占用空间太大。然而也没有想到什么好的方法，最后还是用常规的字典树写了一下，竟然过了。
 #include &lt;iostream&gt;#include &lt;vector&gt;#include &lt;string&gt;#include &lt;stack&gt; using namespace std; using VS = vector&lt;string&gt;; struct TrieTree { char value; bool is_end; TrieTree *children[26]; TrieTree() { for (int i = 0; i &lt; 26; i&#43;&#43;) children[i] = nullptr; is_end = false; } }; void insert_word(TrieTree *root, string s) { for (auto x: s) { int pos = x - &#39;a&#39;; if (nullptr != root-&gt;children[pos]) { root = root-&gt;children[pos]; } else { TrieTree *tmp = new TrieTree(); tmp-&gt;value = x; root-&gt;children[pos] = tmp; root = tmp; } } root-&gt;is_end = true; } void print_tree(TrieTree *root, string s, vector&lt;string&gt; &amp;words) { for (int i = 0; i &lt; 26; i&#43;&#43;) { TrieTree *child = root-&gt;children[i]; if (nullptr !">
 <meta itemprop="datePublished" content="2019-11-27T00:00:00&#43;08:00" />
-<meta itemprop="dateModified" content="2019-11-30T23:29:42&#43;08:00" />
+<meta itemprop="dateModified" content="2019-12-09T21:20:19&#43;08:00" />
 <meta itemprop="wordCount" content="453">
 
 
