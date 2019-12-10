@@ -6,10 +6,26 @@
     <description>Recent content on Do sth. Slowly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 02 Dec 2019 14:33:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Dec 2019 14:59:00 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LeetCode 1283. 使结果不超过阈值的最小除数</title>
+      <link>/post/leetcode-1283/</link>
+      <pubDate>Tue, 10 Dec 2019 14:59:00 +0800</pubDate>
+      
+      <guid>/post/leetcode-1283/</guid>
+      <description>1283. 使结果不超过阈值的最小除数
+ 给你一个整数数组 nums 和一个正整数 threshold ，你需要选择一个正整数作为除数，然后将数组里每个数都除以它，并对除法结果求和。
+请你找出能够使上述结果小于等于阈值 threshold 的除数中 最小 的那个。
+每个数除以除数后都向上取整，比方说 7/3 = 3 ， 10/2 = 5 。
+题目保证一定有解。
+来源：力扣（LeetCode）链接：https://leetcode-cn.com/problems/find-the-smallest-divisor-given-a-threshold 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ 这题开始我也没有思路，然后瞄了一眼题解，说是二分。然后自己朝着二分的思路想，发现确实可以二分来做。首先我们知道，当 x 比较大的时候，肯定是一个解，当 x 越大，整个数列的和越小，也就是 F(x) 是递减的，我们需要找到最小的 x 使得 F(x) &amp;lt;= threshold 。由于这个函数单调递减，我们可以考虑二分的思路：首先确定 x 的范围，然后在这个范围中二分；首先，考虑 x 的最大值，原来数组中的最大值一定是解，所以可以把它当作最大值；再考虑 x 的最小值，把原来的数组排序，假设前 n-1 项除以 x 的值都是 1，那么此时第 n 项的值最大，此时对应的 x 值最小，此时 x 为 a[n - 1] / (threshold - (n - 1)) 。剩下的就是写出正确的二分了，注意考虑边界条件，不要死循环。
+using VI = vector&amp;lt;int&amp;gt;; class Solution { public: int smallestDivisor(vector&amp;lt;int&amp;gt;&amp;amp; nums, int threshold) { sort(nums.</description>
+    </item>
     
     <item>
       <title>Some books I read (or want to read)</title>
