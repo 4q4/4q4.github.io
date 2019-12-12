@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Do sth. Slowly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 12 Dec 2019 11:54:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 12 Dec 2019 19:05:00 +0800</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,16 +14,25 @@
     <item>
       <title>algorithm</title>
       <link>/tags/algorithm/</link>
-      <pubDate>Thu, 12 Dec 2019 11:54:00 +0800</pubDate>
+      <pubDate>Thu, 12 Dec 2019 19:05:00 +0800</pubDate>
       
       <guid>/tags/algorithm/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>hard</title>
+      <link>/tags/hard/</link>
+      <pubDate>Thu, 12 Dec 2019 19:05:00 +0800</pubDate>
+      
+      <guid>/tags/hard/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>LeetCode</title>
       <link>/tags/leetcode/</link>
-      <pubDate>Thu, 12 Dec 2019 11:54:00 +0800</pubDate>
+      <pubDate>Thu, 12 Dec 2019 19:05:00 +0800</pubDate>
       
       <guid>/tags/leetcode/</guid>
       <description></description>

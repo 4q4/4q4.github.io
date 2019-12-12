@@ -23,7 +23,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/leetcode-1043/" />
 <meta property="article:published_time" content="2019-12-12T11:54:00+08:00" />
-<meta property="article:modified_time" content="2019-12-12T12:15:19+08:00" />
+<meta property="article:modified_time" content="2019-12-12T12:17:14+08:00" />
 
 
 <meta name="twitter:card" content="summary"/>
@@ -50,7 +50,7 @@
  看到这道题目一开始是在群里，发了英文版的这道题目，大概看了一下，以为是分割成最多 K 个子数组，然后写了一下，最后提交当然是答案错误，反推错误的样例，发现没错啊，然后再看中文题意，发现理解错了。本意是每个子数组长度最多是 K ，然后就没啥思路了。猜想是 DP，可是也没有构造出状态，最后没有做出来。群里人说确实是 DP，然后我瞄了一眼题解，确实很多都是 DP 来做的，自己又朝着 DP 的方向思考，还是没有想出来。今天上午又开始想这道题目：既然是 DP，并且看题解也不是一道复杂的 DP，那么状态应该很简单，只需要构造出一个状态，满足：最优子结构、无后效性即可。然后就开始假设状态，思考决策的过程应该检查哪些状态，有哪些条件，哪些条件是必须的，哪些条件是不需要保存的，对于下一个状态，是不是只和上一个（或者多个）状态的结果有关。最后想到可以用 dp[i] 来表示前 i 个数字的最优解，开始以为也需要保存以第 i 个数字结尾的子数组的长度，后来发现下一个状态并不需要这个东西，因为下一个数字加入进来的时候，并不需要延展以第 i 个数字结尾的子数组，它只需要作为一个以第 i&#43;1 个数字的新数组向左延展就好了，最多延展的长度是 K ，这样可以保证遍历到所有的上一个状态。这样就可以得到最优解即 dp[n] 。
 #include &lt;iostream&gt;#include &lt;vector&gt;#include &lt;queue&gt;#include &lt;functional&gt;#include &lt;algorithm&gt; using namespace std; using VI = vector&lt;int&gt;; using PII = pair&lt;int, int&gt;; class Solution { public: int maxSumAfterPartitioning(vector&lt;int&gt;&amp; A, int K) { int len = int(A.">
 <meta itemprop="datePublished" content="2019-12-12T11:54:00&#43;08:00" />
-<meta itemprop="dateModified" content="2019-12-12T12:15:19&#43;08:00" />
+<meta itemprop="dateModified" content="2019-12-12T12:17:14&#43;08:00" />
 <meta itemprop="wordCount" content="183">
 
 
@@ -183,7 +183,7 @@ if (!doNotTrack) {
     <span style="color:#66d9ef">return</span> dp[len<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
   }
 };
-</code></pre></div><p>做这道题目有点儿收获。虽然是一道简单的 DP，但是和直接看题解相比，自己思考出结果是很重要的，能够体会到其中的收获更大。更能够理解到 DP 的思路，为什么要使用它，应该满足什么条件等等。为了保持信心，可以先不去做那些困难的题目，可以先在 LeetCode 上面做一些中等的题目，循序渐进，最好能够独立做出来。思考的过程中可能会走弯路，不过那是值得的。</p>
+</code></pre></div><p>做这道题目有点儿收获。虽然是一道简单的 DP，但是和直接看题解相比，自己思考出结果是很重要的，能够体会到其中的收获更大。更能够理解到 DP 的思路，为什么要使用它，应该满足什么条件等等。为了保持信心，可以先不去做那些困难的题目，可以先在 LeetCode 上面做一些中等的题目，循序渐进，最好能够独立做出来。思考的过程中可能会走弯路，不过那是值得的，最终把题目做出来的那种成就感非常强烈。</p>
  </div>
     <footer class="post-footer">
 

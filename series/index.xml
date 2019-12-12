@@ -6,7 +6,7 @@
     <description>Recent content in Series on Do sth. Slowly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 12 Dec 2019 11:54:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 12 Dec 2019 19:05:00 +0800</lastBuildDate>
     
 	<atom:link href="/series/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Solution to LeetCode Problems</title>
       <link>/series/solution-to-leetcode-problems/</link>
-      <pubDate>Thu, 12 Dec 2019 11:54:00 +0800</pubDate>
+      <pubDate>Thu, 12 Dec 2019 19:05:00 +0800</pubDate>
       
       <guid>/series/solution-to-leetcode-problems/</guid>
       <description></description>
