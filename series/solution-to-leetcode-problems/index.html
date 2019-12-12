@@ -14,7 +14,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/series/solution-to-leetcode-problems/" />
-<meta property="og:updated_time" content="2019-12-10T16:03:00+08:00" />
+<meta property="og:updated_time" content="2019-12-12T11:54:00+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Solution to LeetCode Problems"/>
@@ -104,6 +104,51 @@ if (!doNotTrack) {
 <h2 class="term-list-title">
     <a href="/series/solution-to-leetcode-problems/" class="linktopost">series: Solution to LeetCode Problems</a>
 </h2>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='/post/leetcode-1043/'> LeetCode 1043. 分隔数组以得到最大和</a> </h2>
+    <div class="meta">
+      <div class="date">
+      12 Dec, 2019 - 1 minutes
+      </div>
+      
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/leetcode">#LeetCode</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/algorithm">#algorithm</a>
+      </div>
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    给出整数数组 A，将该数组分隔为长度最多为 K 的几个（连续）子数组。分隔完成后，每个子数组的中的值都会变为该子数组中的最大值。
+返回给定数组完成分隔后的最大和。
+示例：
+输入：A = [1,15,7,9,2,5,10], K = 3 输出：84 解释：A 变为 [15,15,15,9,10,10,10]
+提示：
+1 &lt;= K &lt;= A.length &lt;= 500 0 &lt;= A[i] &lt;= 10^6
+来源：力扣（LeetCode）链接：https://leetcode-cn.com/problems/partition-array-for-maximum-sum 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ 看到这道题目一开始是在群里，发了英文版的这道题目，大概看了一下，以为是分割成最多 K 个子数组，然后写了一下，最后提交当然是答案错误，反推错误的样例，发现没错啊，然后再看中文题意，发现理解错了。本意是每个子数组长度最多是 K ，然后就没啥思路了。猜想是 DP，可是也没有构造出状态，最后没有做出来。群里人说确实是 DP，然后我瞄了一眼题解，确实很多都是 DP 来做的，自己又朝着 DP 的方向思考，还是没有想出来。今天上午又开始想这道题目：既然是 DP，并且看题解也不是一道复杂的 DP，那么状态应该很简单，只需要构造出一个状态，满足：最优子结构、无后效性即可。然后就开始假设状态，思考决策的过程应该检查哪些状态，有哪些条件，哪些条件是必须的，哪些条件是不需要保存的，对于下一个状态，是不是只和上一个（或者多个）状态的结果有关。最后想到可以用 dp[i] 来表示前 i 个数字的最优解，开始以为也需要保存以第 i 个数字结尾的子数组的长度，后来发现下一个状态并不需要这个东西，因为下一个数字加入进来的时候，并不需要延展以第 i 个数字结尾的子数组，它只需要作为一个以第 i+1 个数字的新数组向左延展就好了，最多延展的长度是 K ，这样可以保证遍历到所有的上一个状态。这样就可以得到最优解即 dp[n] 。
+#include &lt;iostream&gt;#include &lt;vector&gt;#include &lt;queue&gt;#include &lt;functional&gt;#include &lt;algorithm&gt; using namespace std; using VI = vector&lt;int&gt;; using PII = pair&lt;int, int&gt;; class Solution { public: int maxSumAfterPartitioning(vector&lt;int&gt;&amp; A, int K) { int len = int(A.
+  </div>
+
+  <div class="rmore">
+    <a href='/post/leetcode-1043/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
 
 
     <article class="post-preview">

@@ -6,10 +6,27 @@
     <description>Recent content on Do sth. Slowly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 10 Dec 2019 16:03:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 12 Dec 2019 11:54:00 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LeetCode 1043. 分隔数组以得到最大和</title>
+      <link>/post/leetcode-1043/</link>
+      <pubDate>Thu, 12 Dec 2019 11:54:00 +0800</pubDate>
+      
+      <guid>/post/leetcode-1043/</guid>
+      <description>给出整数数组 A，将该数组分隔为长度最多为 K 的几个（连续）子数组。分隔完成后，每个子数组的中的值都会变为该子数组中的最大值。
+返回给定数组完成分隔后的最大和。
+示例：
+输入：A = [1,15,7,9,2,5,10], K = 3 输出：84 解释：A 变为 [15,15,15,9,10,10,10]
+提示：
+1 &amp;lt;= K &amp;lt;= A.length &amp;lt;= 500 0 &amp;lt;= A[i] &amp;lt;= 10^6
+来源：力扣（LeetCode）链接：https://leetcode-cn.com/problems/partition-array-for-maximum-sum 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ 看到这道题目一开始是在群里，发了英文版的这道题目，大概看了一下，以为是分割成最多 K 个子数组，然后写了一下，最后提交当然是答案错误，反推错误的样例，发现没错啊，然后再看中文题意，发现理解错了。本意是每个子数组长度最多是 K ，然后就没啥思路了。猜想是 DP，可是也没有构造出状态，最后没有做出来。群里人说确实是 DP，然后我瞄了一眼题解，确实很多都是 DP 来做的，自己又朝着 DP 的方向思考，还是没有想出来。今天上午又开始想这道题目：既然是 DP，并且看题解也不是一道复杂的 DP，那么状态应该很简单，只需要构造出一个状态，满足：最优子结构、无后效性即可。然后就开始假设状态，思考决策的过程应该检查哪些状态，有哪些条件，哪些条件是必须的，哪些条件是不需要保存的，对于下一个状态，是不是只和上一个（或者多个）状态的结果有关。最后想到可以用 dp[i] 来表示前 i 个数字的最优解，开始以为也需要保存以第 i 个数字结尾的子数组的长度，后来发现下一个状态并不需要这个东西，因为下一个数字加入进来的时候，并不需要延展以第 i 个数字结尾的子数组，它只需要作为一个以第 i+1 个数字的新数组向左延展就好了，最多延展的长度是 K ，这样可以保证遍历到所有的上一个状态。这样就可以得到最优解即 dp[n] 。
+#include &amp;lt;iostream&amp;gt;#include &amp;lt;vector&amp;gt;#include &amp;lt;queue&amp;gt;#include &amp;lt;functional&amp;gt;#include &amp;lt;algorithm&amp;gt; using namespace std; using VI = vector&amp;lt;int&amp;gt;; using PII = pair&amp;lt;int, int&amp;gt;; class Solution { public: int maxSumAfterPartitioning(vector&amp;lt;int&amp;gt;&amp;amp; A, int K) { int len = int(A.</description>
+    </item>
     
     <item>
       <title>LeetCode 1282. 用户分组</title>
@@ -64,7 +81,7 @@ TODO黄金时代 王小波
 DONE黄金时代 &amp;lt;2019-12-10 二 11:57&amp;gt;今天上班路上开始看这本书，原因还是 Kindle 里面恰好有这本书，好长时间也没有读。我发现自己读好多书的原因都是这样，Kindle 里面恰好有，或者手边恰好有这本书，然后就读了下去。如果带有很强的目的性，比如这周打算看哪本书，那是肯定看不下去的。另外一方面确实是 Kindle 阅读体验好，携带方便，实体书实在是没有时间和精力维护。
 话说这本书好有意思，开头一部分就非常好看，阅读过程简直是享受。话说几年以前也尝试看过这本书，当时没有看下去，现在读来却极有乐趣。我想文学的乐趣就是这样，一本书之前读味同嚼蜡，过一段时间再读却津津有味。
 很多时候阅读的乐趣在于，书里的某个场景、某段描写让自己想到了自己很久以前，也有过同样的感受，勾起了自己一段美好的回忆。在上班路上，熙熙攘攘的人群中，仿佛感觉处在另外一个世界。
-&amp;lt;2019-12-11 三 15:13&amp;gt;今天利用午休时间，看完了这篇小说（这本书后面还有两个长篇）。说实话并没有怎么看懂，印象深刻的就是那些「敦伟大友谊」、「想变成天上或明或暗的云」句子。不过，整体阅读感受还是挺愉快的，如果是上学时候读到这本书，肯定和现在不一样。
+&amp;lt;2019-12-11 三 15:13&amp;gt;今天利用午休时间，看完了这篇小说（这本书后面还有两个长篇）。说实话并没有怎么看懂，印象深刻的就是那些「敦伟大友谊」、「想变成天上或明或暗的云」之类的句子。不过，整体阅读感受还是挺愉快的，如果是上学时候读到这本书，肯定和现在不一样。
 TODO三十而立 &amp;lt;2019-12-12 四 11:10&amp;gt;今天开始读这本书的第二个短篇，开头还挺有趣，好像王小波的书读起来都特别舒服欢快。
 TODOOperating System Concepts, 9th Edition &amp;lt;2019-12-12 四 11:16&amp;gt;上周开始阅读这本书，英文版本的，读起来挺舒适，只不过有点儿枯燥，第一章还没有读完。</description>
     </item>
