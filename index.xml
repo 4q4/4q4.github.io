@@ -6,10 +6,25 @@
     <description>Recent content on Do sth. Slowly</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 12 Dec 2019 19:05:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2019 16:27:00 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Some games I play</title>
+      <link>/post/random-games/</link>
+      <pubDate>Mon, 30 Dec 2019 16:27:00 +0800</pubDate>
+      
+      <guid>/post/random-games/</guid>
+      <description>上周六买的 PS4 Pro 终于到了，本来以为上午就能到，到过一直等到下午都还没有到，出去吃饭的时候，看到一个大箱子在门口挡着，也不知道什么时候到的，顺丰送货原来连电话都不打一个的（
+买的两个游戏在 PS4 前一天就到了，本来包装的箱子不大，但是顺丰的包装大概是原来的箱子的几倍吧，填充了很多防震的东西。
+DONE风之旅人 第一次玩这个游戏，也不还太会用 PS4。整个过程真是太美了，风景特别好看，体验特别好，过程中不断发出惊叹，原来游戏还可以这么美。
+基本上一晚上就打通关了，途中碰见了另外一个人，一起在某一关的最后静坐了一会儿，很新奇。
+说起来整个过程是没有声音的，我还以为游戏本来就没有声音，后来才知道，原来是音频设置的问题。
+TODO荒野大镖客：救赎2 刚刚开始玩，这个游戏看起来适合有整块时间的时候玩。
+两个游戏玩的过程中并没有上瘾的感觉，只是觉得画面好优美，体验极好，感觉更适合消遣，不过这大概也是游戏的目的吧。</description>
+    </item>
     
     <item>
       <title>LeetCode 25. K 个一组翻转链表</title>
@@ -153,8 +168,8 @@ TODOOperating System Concepts, 9th Edition &amp;lt;2019-12-12 四 11:16&amp;gt;�
       
       <guid>/post/random-links/</guid>
       <description>There are some random interesting links I found on the Internet.
- matrix67  考据癖 虎兔手记   BYVoid MaskRay Ruchee 的荒草园子 How I Switched To Plan 9 An overview of the monad EMACS-DOCUMENT Jack Baty&#39;s weblog Ken Grimes Computer are the Devil Real World Examples blogs using hugo Blogger Bust ZHENG Zi&#39;ou 零壹軒·笔记 wicast&#39;s TNT Pygments style gallery 鸟窝 木子  Learning resources:
- forum.fast.ai course fast.ai  eBooks:</description>
+ matrix67  考据癖 虎兔手记   BYVoid MaskRay Ruchee 的荒草园子 How I Switched To Plan 9 An overview of the monad EMACS-DOCUMENT Jack Baty&#39;s weblog Ken Grimes Computer are the Devil Real World Examples blogs using hugo Blogger Bust ZHENG Zi&#39;ou 零壹軒·笔记 wicast&#39;s TNT Pygments style gallery 鸟窝 木子 eschulte public void  Learning resources:
+ forum.fast.ai course fast.</description>
     </item>
     
     <item>
