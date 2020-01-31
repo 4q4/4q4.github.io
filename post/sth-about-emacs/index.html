@@ -7,7 +7,7 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.62.2" />
 
 <link rel="canonical" href="/post/sth-about-emacs/">
 <meta property="og:title" content="Something About Emacs" />
@@ -33,7 +33,7 @@ motion commands of c-mode
    Keystokes Command name Action     C-M-a beginning-of-defun Move to the beginning of the body of the function   C-M-e end-of-defun Move to the end of the function   C-M-h c-mark-function Put the cursor at the beginning of the function, the mark at the end   C-c C-q c-indent-defun Indent the entire function according to indention style    Eshell  Mastering Eshell Eschewing Zshell for Emacs Shell howardabrams dot-files WikiEmacs Eshell     Keystrokes Command name Action     C-c M-b eshell-insert-buffer-name Insert the printed buffer name at point   C-c M-v eshell-insert-envvar Inserts an environment variable name at point    Eshell pseudo-devices:">
 <meta itemprop="datePublished" content="2019-11-25T00:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-11-30T07:41:14&#43;08:00" />
-<meta itemprop="wordCount" content="132">
+<meta itemprop="wordCount" content="227">
 
 
 
@@ -185,6 +185,59 @@ if (!doNotTrack) {
 <li><code>/dev/kill</code> sends the output to the kill ring</li>
 </ul>
 <p>Eshell support both login and profile/rc shell script. Refer to variable <code>eshell-login-script</code> and <code>eshell-rc-script</code>.</p>
+<h2 id="mysql">MySQL</h2>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->&lt;2020-01-16 四 11:40&gt;<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<table>
+<thead>
+<tr>
+<th>Keystrokes</th>
+<th>Command name</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M-x -my</td>
+<td>sql-mysql</td>
+<td>connect MySQL and open sql buffer</td>
+</tr>
+<tr>
+<td>C-u M-x -my</td>
+<td>sql-mysql</td>
+<td>start a new connection with MySQL</td>
+</tr>
+</tbody>
+</table>
+<h2 id="registers">Registers</h2>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->&lt;2020-01-16 四 11:40&gt;<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<table>
+<thead>
+<tr>
+<th>Keystrokes</th>
+<th>Command name</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C-x r w R</td>
+<td>window-configuration-to-register</td>
+<td>Save the state of the selected frame's windows in register R</td>
+</tr>
+<tr>
+<td>C-x r j R</td>
+<td>jump-to-register</td>
+<td>restore a window or frame configuration</td>
+</tr>
+<tr>
+<td>C-x r f R</td>
+<td>frameset-to-register</td>
+<td>Save the sate of all frames, including all their windows, in register R</td>
+</tr>
+</tbody>
+</table>
+<p>When you restore a configuration, any existing frames not included in the configuration
+become invisible.</p>
  </div>
     <footer class="post-footer">
 

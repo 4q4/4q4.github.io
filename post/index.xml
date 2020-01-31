@@ -107,7 +107,6 @@ using VI = vector&amp;lt;int&amp;gt;; class Solution { public: int smallestDivis
       <description>列出一些读过、正在读或者想读的书。
 DONE棋王·树王·孩子王 阿城
 &amp;lt;2019-12-02 一 14:41&amp;gt;这本书写得极好。文字清新优美，人物描写极其生动，读起来非常舒适，大概能够感受到那种文学的美。棋王看了至少三遍，树王由于过于压抑，看过第一遍之后不敢看第二遍，前些天看第二遍的时候，看了一般，然后隔了很久才继续看下去，才淡化那种压抑的感觉。孩子王只看过一遍，非常好看，我想我还会读第二遍。
-TODOThe Go Programming Language 这本书之前看过了大部分，只是基本都忘记了。最近正在重新读，希望能够做一些笔记。
 DONE我们生活在巨大的差距里 余华
 &amp;lt;2019-12-02 一 14:33&amp;gt;昨天拿出吃灰已久的 kindle 在地铁看，无意间翻到的。读起来竟然非常好看，两天利用路上的时间已读完三分之一。我想，以后还会读余华的其它作品。
 &amp;lt;2019-12-04 三 18:19&amp;gt;这本书讲了很多文学的故事，甚至激发起了我的阅读欲望，简直就是一个书单。
@@ -117,7 +116,11 @@ DONE黄金时代 &amp;lt;2019-12-10 二 11:57&amp;gt;今天上班路上开始看
 话说这本书好有意思，开头一部分就非常好看，阅读过程简直是享受。话说几年以前也尝试看过这本书，当时没有看下去，现在读来却极有乐趣。我想文学的乐趣就是这样，一本书之前读味同嚼蜡，过一段时间再读却津津有味。
 很多时候阅读的乐趣在于，书里的某个场景、某段描写让自己想到了自己很久以前，也有过同样的感受，勾起了自己一段美好的回忆。在上班路上，熙熙攘攘的人群中，仿佛感觉处在另外一个世界。
 &amp;lt;2019-12-11 三 15:13&amp;gt;今天利用午休时间，看完了这篇小说（这本书后面还有两个长篇）。说实话并没有怎么看懂，印象深刻的就是那些「敦伟大友谊」、「想变成天上或明或暗的云」之类的句子。不过，整体阅读感受还是挺愉快的，如果是上学时候读到这本书，肯定和现在不一样。
-TODO三十而立 &amp;lt;2019-12-12 四 11:10&amp;gt;今天开始读这本书的第二个短篇，开头还挺有趣，好像王小波的书读起来都特别舒服欢快。
+DONE三十而立 &amp;lt;2019-12-12 四 11:10&amp;gt;今天开始读这本书的第二个短篇，开头还挺有趣，好像王小波的书读起来都特别舒服欢快。
+DONE革命时期的爱情 &amp;lt;2020-01-09 四 18:10&amp;gt;今天读完了这个短篇。老鲁、X 海鹰两个名字挥之不去，整个阅读过程中还是充满了欢乐。
+TODO我的阴阳两界 今天开始读最后一个短篇。书里面的很多场景，很久以前的小时候也有亲身体会。不过有的时候路上看书笑得肚子疼，被别人当成傻子。
+TODOThe Go Programming Language 这本书之前看过了大部分，只是基本都忘记了。最近正在重新读，希望能够做一些笔记。
+这本书真是常读常新，很多章节都是一针见血，可以加深理解，并且少走弯路。应该多体会这本书的内容，可能的话，需要好好做一些总结。
 TODOOperating System Concepts, 9th Edition &amp;lt;2019-12-12 四 11:16&amp;gt;上周开始阅读这本书，英文版本的，读起来挺舒适，只不过有点儿枯燥，第一章还没有读完。</description>
     </item>
     
@@ -131,7 +134,12 @@ TODOOperating System Concepts, 9th Edition &amp;lt;2019-12-12 四 11:16&amp;gt;�
 多阅读其他人的代码，其它项目的代码，学习设计思想和编码技巧。水平提高之后，尝试去阅读开源项目的代码，从项目中学习。
 &amp;lt;2019-12-04 三 18:06&amp;gt;这两天发现 MacBook Air 2013 总是时不时风扇狂转，看 Monitor 发现是 WindowServer 这个进程占用 CPU 比较高，过一会儿就恢复了，再过一会儿又开始，循环往复。去搜了一下，试过了各种方法：禁用掉透明效果等，都没有用。猜是不是因为新版本系统 Catalina 的问题，是不是要重新安装一下旧版本的系统，不过又太麻烦了。后来看到一篇文章说这个进程可能和绘制窗口和图像有关，如果外接了显示器可能也会造成这个进程 CPU 占用提高。然后我把外接显示器断开，过了一会儿发现没有那个问题了。问题解决！
 中午去公司另外一个办公地点，等人的时候发现墙边的借书架上有一本计算机程序设计的艺术，第四卷组合数学，中文版的，纸张很不错，无聊就读了前言，看起来好厉害。
-&amp;lt;2019-12-12 四 11:11&amp;gt;有多久没有体会到编程的乐趣了？是不是更多时候是复制粘贴？有没有思考过背后的实现原理？多久没有认真读一本书了？有没有坚持读下去？有没有做过总结？我觉得这是值得思考的问题。我想趁着现在还有精力和力气，还没有完全变老，想学习有趣的东西，想玩有趣的东西，想学最艰深难懂的知识，想做一些有趣无用的事情。</description>
+&amp;lt;2019-12-12 四 11:11&amp;gt;有多久没有体会到编程的乐趣了？是不是更多时候是复制粘贴？有没有思考过背后的实现原理？多久没有认真读一本书了？有没有坚持读下去？有没有做过总结？我觉得这是值得思考的问题。我想趁着现在还有精力和力气，还没有完全变老，想学习有趣的东西，想玩有趣的东西，想学最艰深难懂的知识，想做一些有趣无用的事情。
+&amp;lt;2019-12-31 二 17:50&amp;gt;话说，其实对于编辑器的要求，很多时候根本不需要多快的速度，少摸鱼，专注在重要的事情上，那么编码时间和速度其实根本不重要。除非为了好玩，否则不要为了所谓的高效和省力去折腾乱七八糟的东西，得不偿失。
+&amp;lt;2020-01-06 一 18:48&amp;gt;新的一年，不知不觉过得很快，那么加油吧！
+「人之患在好为人师」这句话是有道理的。简单问题没有必要回答，自己不确定的问题更不要回答。永远不要以老师的姿态自居。
+今天一天的效率很低，虽然也学到了一些东西，但是产出却很少。
+&amp;lt;2020-01-09 四 18:08&amp;gt;觉得读有趣的书真是一件有趣的事情，可能的话，我愿意一周读一本书。看到大佬一年能够读六十本书，好羡慕。</description>
     </item>
     
     <item>
@@ -168,8 +176,7 @@ TODOOperating System Concepts, 9th Edition &amp;lt;2019-12-12 四 11:16&amp;gt;�
       
       <guid>/post/random-links/</guid>
       <description>There are some random interesting links I found on the Internet.
- matrix67  考据癖 虎兔手记   BYVoid MaskRay Ruchee 的荒草园子 How I Switched To Plan 9 An overview of the monad EMACS-DOCUMENT Jack Baty&#39;s weblog Ken Grimes Computer are the Devil Real World Examples blogs using hugo Blogger Bust ZHENG Zi&#39;ou 零壹軒·笔记 wicast&#39;s TNT Pygments style gallery 鸟窝 木子 eschulte public void  Learning resources:
- forum.fast.ai course fast.</description>
+ matrix67  考据癖 虎兔手记   BYVoid MaskRay Ruchee 的荒草园子 How I Switched To Plan 9 An overview of the monad EMACS-DOCUMENT Jack Baty&#39;s weblog Ken Grimes Computer are the Devil Real World Examples blogs using hugo Blogger Bust ZHENG Zi&#39;ou 零壹軒·笔记 wicast&#39;s TNT Pygments style gallery 鸟窝 木子 eschulte public void 信任的进化 Explorable Explanations  Learning resources:</description>
     </item>
     
     <item>
