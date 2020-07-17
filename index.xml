@@ -17,13 +17,7 @@
       <pubDate>Fri, 31 Jan 2020 00:00:00 +0800</pubDate>
       
       <guid>/post/go-basic-syntax/</guid>
-      <description>In this series, I will list some notes about Go Programming Language syntax.
-数组 初始化
-  指定所有元素
-  自动推断数组长度
-b1 := [...]int{4, 5, 7}   指定下标
-var a1 [100]int a1 = [100]int{2: 3, 5}  和 1) 可以混合使用    多维数组的初始化
-var aa1 [3][2]int aa1 = [3][2]int{ [2]int{1, 2}, [2]int{4, 5}, }  数组是值类型，赋值会拷贝 数组支持 `==` 和 `!=` 操作  切片 </description>
+      <description>In this series, I will list some notes about Go Programming Language syntax.</description>
     </item>
     
     <item>
@@ -154,7 +148,8 @@ TODOOperating System Concepts, 9th Edition &amp;lt;2019-12-12 四 11:16&amp;gt;�
 &amp;lt;2020-01-06 一 18:48&amp;gt;新的一年，不知不觉过得很快，那么加油吧！
 「人之患在好为人师」这句话是有道理的。简单问题没有必要回答，自己不确定的问题更不要回答。永远不要以老师的姿态自居。
 今天一天的效率很低，虽然也学到了一些东西，但是产出却很少。
-&amp;lt;2020-01-09 四 18:08&amp;gt;觉得读有趣的书真是一件有趣的事情，可能的话，我愿意一周读一本书。看到大佬一年能够读六十本书，好羡慕。</description>
+&amp;lt;2020-01-09 四 18:08&amp;gt;觉得读有趣的书真是一件有趣的事情，可能的话，我愿意一周读一本书。看到大佬一年能够读六十本书，好羡慕。
+&amp;lt;2020-02-09 日 14:15&amp;gt;自己之前其实做了很多错误的决定，可以现在已经不能改变。要说从中得到了什么教训，好像也并没有。希望下次在遇到类似情况的时候，能够做出正确的选择吧。</description>
     </item>
     
     <item>
@@ -191,7 +186,7 @@ TODOOperating System Concepts, 9th Edition &amp;lt;2019-12-12 四 11:16&amp;gt;�
       
       <guid>/post/random-links/</guid>
       <description>There are some random interesting links I found on the Internet.
- matrix67  考据癖 虎兔手记   BYVoid MaskRay Ruchee 的荒草园子 How I Switched To Plan 9 An overview of the monad EMACS-DOCUMENT Jack Baty&#39;s weblog Ken Grimes Computer are the Devil Real World Examples blogs using hugo Blogger Bust ZHENG Zi&#39;ou 零壹軒·笔记 wicast&#39;s TNT Pygments style gallery 鸟窝 木子 eschulte public void 信任的进化 Explorable Explanations  Learning resources:</description>
+ matrix67  考据癖 虎兔手记   BYVoid MaskRay Ruchee 的荒草园子 How I Switched To Plan 9 An overview of the monad EMACS-DOCUMENT Jack Baty&amp;rsquo;s weblog Ken Grimes Computer are the Devil Real World Examples blogs using hugo Blogger Bust ZHENG Zi&amp;rsquo;ou 零壹軒·笔记 wicast&amp;rsquo;s TNT Pygments style gallery 鸟窝 木子 eschulte public void 信任的进化 Explorable Explanations  Learning resources:</description>
     </item>
     
     <item>

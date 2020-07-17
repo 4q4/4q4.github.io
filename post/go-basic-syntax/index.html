@@ -7,17 +7,11 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.60.0" />
+<meta name="generator" content="Hugo 0.74.1" />
 
 <link rel="canonical" href="/post/go-basic-syntax/">
 <meta property="og:title" content="Go Programming Language Basic Syntax" />
-<meta property="og:description" content="In this series, I will list some notes about Go Programming Language syntax.
-数组 初始化
-  指定所有元素
-  自动推断数组长度
-b1 := [...]int{4, 5, 7}   指定下标
-var a1 [100]int a1 = [100]int{2: 3, 5}  和 1) 可以混合使用    多维数组的初始化
-var aa1 [3][2]int aa1 = [3][2]int{ [2]int{1, 2}, [2]int{4, 5}, }  数组是值类型，赋值会拷贝 数组支持 `==` 和 `!=` 操作  切片 " />
+<meta property="og:description" content="In this series, I will list some notes about Go Programming Language syntax." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/go-basic-syntax/" />
 <meta property="article:published_time" content="2020-01-31T00:00:00+08:00" />
@@ -26,26 +20,14 @@ var aa1 [3][2]int aa1 = [3][2]int{ [2]int{1, 2}, [2]int{4, 5}, }  数组是值�
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Go Programming Language Basic Syntax"/>
-<meta name="twitter:description" content="In this series, I will list some notes about Go Programming Language syntax.
-数组 初始化
-  指定所有元素
-  自动推断数组长度
-b1 := [...]int{4, 5, 7}   指定下标
-var a1 [100]int a1 = [100]int{2: 3, 5}  和 1) 可以混合使用    多维数组的初始化
-var aa1 [3][2]int aa1 = [3][2]int{ [2]int{1, 2}, [2]int{4, 5}, }  数组是值类型，赋值会拷贝 数组支持 `==` 和 `!=` 操作  切片 "/>
+<meta name="twitter:description" content="In this series, I will list some notes about Go Programming Language syntax."/>
 
 
 <meta itemprop="name" content="Go Programming Language Basic Syntax">
-<meta itemprop="description" content="In this series, I will list some notes about Go Programming Language syntax.
-数组 初始化
-  指定所有元素
-  自动推断数组长度
-b1 := [...]int{4, 5, 7}   指定下标
-var a1 [100]int a1 = [100]int{2: 3, 5}  和 1) 可以混合使用    多维数组的初始化
-var aa1 [3][2]int aa1 = [3][2]int{ [2]int{1, 2}, [2]int{4, 5}, }  数组是值类型，赋值会拷贝 数组支持 `==` 和 `!=` 操作  切片 ">
+<meta itemprop="description" content="In this series, I will list some notes about Go Programming Language syntax.">
 <meta itemprop="datePublished" content="2020-01-31T00:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-31T15:36:31&#43;08:00" />
-<meta itemprop="wordCount" content="53">
+<meta itemprop="wordCount" content="13">
 
 
 
@@ -132,36 +114,6 @@ if (!doNotTrack) {
     <h1 class="title"> Go Programming Language Basic Syntax </h1>
     <div class="content"> <p>In this series, I will list some notes about Go Programming Language
 syntax.</p>
-<h2 id="数组">数组</h2>
-<p>初始化</p>
-<ol>
-<li>
-<p>指定所有元素</p>
-</li>
-<li>
-<p>自动推断数组长度</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">b1</span> <span style="color:#f92672">:=</span> [<span style="color:#f92672">...</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>}
-</code></pre></div></li>
-<li>
-<p>指定下标</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a1</span> [<span style="color:#ae81ff">100</span>]<span style="color:#66d9ef">int</span>
-<span style="color:#a6e22e">a1</span> = [<span style="color:#ae81ff">100</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">2</span>: <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>}
-</code></pre></div><ol>
-<li>和 1) 可以混合使用</li>
-</ol>
-</li>
-</ol>
-<p>多维数组的初始化</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">aa1</span> [<span style="color:#ae81ff">3</span>][<span style="color:#ae81ff">2</span>]<span style="color:#66d9ef">int</span>
-<span style="color:#a6e22e">aa1</span> = [<span style="color:#ae81ff">3</span>][<span style="color:#ae81ff">2</span>]<span style="color:#66d9ef">int</span>{
-        [<span style="color:#ae81ff">2</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>},
-        [<span style="color:#ae81ff">2</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>},
-}
-</code></pre></div><ul>
-<li>数组是值类型，赋值会拷贝</li>
-<li>数组支持 `==` 和 `!=` 操作</li>
-</ul>
-<h2 id="切片">切片</h2>
  </div>
     <footer class="post-footer">
 

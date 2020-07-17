@@ -17,13 +17,7 @@
       <pubDate>Fri, 31 Jan 2020 00:00:00 +0800</pubDate>
       
       <guid>/post/go-basic-syntax/</guid>
-      <description>In this series, I will list some notes about Go Programming Language syntax.
-数组 初始化
-  指定所有元素
-  自动推断数组长度
-b1 := [...]int{4, 5, 7}   指定下标
-var a1 [100]int a1 = [100]int{2: 3, 5}  和 1) 可以混合使用    多维数组的初始化
-var aa1 [3][2]int aa1 = [3][2]int{ [2]int{1, 2}, [2]int{4, 5}, }  数组是值类型，赋值会拷贝 数组支持 `==` 和 `!=` 操作  切片 </description>
+      <description>In this series, I will list some notes about Go Programming Language syntax.</description>
     </item>
     
   </channel>

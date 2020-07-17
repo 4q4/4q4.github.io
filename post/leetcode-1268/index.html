@@ -7,7 +7,7 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.60.0" />
+<meta name="generator" content="Hugo 0.74.1" />
 
 <link rel="canonical" href="/post/leetcode-1268/">
 <meta property="og:title" content="LeetCode 1268. 搜索推荐系统" />
@@ -36,7 +36,7 @@
 #include &lt;iostream&gt;#include &lt;vector&gt;#include &lt;string&gt;#include &lt;stack&gt; using namespace std; using VS = vector&lt;string&gt;; struct TrieTree { char value; bool is_end; TrieTree *children[26]; TrieTree() { for (int i = 0; i &lt; 26; i&#43;&#43;) children[i] = nullptr; is_end = false; } }; void insert_word(TrieTree *root, string s) { for (auto x: s) { int pos = x - &#39;a&#39;; if (nullptr != root-&gt;children[pos]) { root = root-&gt;children[pos]; } else { TrieTree *tmp = new TrieTree(); tmp-&gt;value = x; root-&gt;children[pos] = tmp; root = tmp; } } root-&gt;is_end = true; } void print_tree(TrieTree *root, string s, vector&lt;string&gt; &amp;words) { for (int i = 0; i &lt; 26; i&#43;&#43;) { TrieTree *child = root-&gt;children[i]; if (nullptr !">
 <meta itemprop="datePublished" content="2019-11-27T00:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-12T19:20:40&#43;08:00" />
-<meta itemprop="wordCount" content="453">
+<meta itemprop="wordCount" content="454">
 
 
 
@@ -124,10 +124,10 @@ if (!doNotTrack) {
     <div class="content"> <p><a href="https://leetcode-cn.com/problems/search-suggestions-system/">LeetCode 1268. 搜索推荐系统</a></p>
 <p>输入一个词典，然后输入一个单词，对于单词的每一个前缀，输出字典中以这个前缀开始的单词的字典序最小的 3 个单词。词典长度 1000，词典中每个单词的长度 20000，目标单词长度 1000.</p>
 <p>这道题目开始的想法是字典树。可是数据集的范围太大，字典树占用空间太大。然而也没有想到什么好的方法，最后还是用常规的字典树写了一下，竟然过了。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;stack&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stack&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
 <span style="color:#66d9ef">using</span> VS <span style="color:#f92672">=</span> vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span>;
@@ -138,7 +138,7 @@ if (!doNotTrack) {
   TrieTree <span style="color:#f92672">*</span>children[<span style="color:#ae81ff">26</span>];
   TrieTree()
   {
-    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">26</span>; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) children[i] <span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">26</span>; i<span style="color:#f92672">++</span>) children[i] <span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>;
     is_end <span style="color:#f92672">=</span> false;
   }
 };
@@ -147,54 +147,54 @@ if (!doNotTrack) {
 {
   <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> x: s)
     {
-      <span style="color:#66d9ef">int</span> pos <span style="color:#f92672">=</span> x <span style="color:#f92672">-</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>;
-      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">nullptr</span> <span style="color:#f92672">!</span><span style="color:#f92672">=</span> root<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>children[pos])
+      <span style="color:#66d9ef">int</span> pos <span style="color:#f92672">=</span> x <span style="color:#f92672">-</span> <span style="color:#e6db74">&#39;a&#39;</span>;
+      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">nullptr</span> <span style="color:#f92672">!=</span> root<span style="color:#f92672">-&gt;</span>children[pos])
       {
-	root <span style="color:#f92672">=</span> root<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>children[pos];
+	root <span style="color:#f92672">=</span> root<span style="color:#f92672">-&gt;</span>children[pos];
       }
       <span style="color:#66d9ef">else</span>
       {
 	TrieTree <span style="color:#f92672">*</span>tmp <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TrieTree();
-	tmp<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>value <span style="color:#f92672">=</span> x;
-	root<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>children[pos] <span style="color:#f92672">=</span> tmp;
+	tmp<span style="color:#f92672">-&gt;</span>value <span style="color:#f92672">=</span> x;
+	root<span style="color:#f92672">-&gt;</span>children[pos] <span style="color:#f92672">=</span> tmp;
 	root <span style="color:#f92672">=</span> tmp;
       }
     }
-  root<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>is_end <span style="color:#f92672">=</span> true;
+  root<span style="color:#f92672">-&gt;</span>is_end <span style="color:#f92672">=</span> true;
 }
 
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print_tree</span>(TrieTree <span style="color:#f92672">*</span>root, string s, vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;</span>words)
 {
-  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">26</span>; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">26</span>; i<span style="color:#f92672">++</span>)
     {
-      TrieTree <span style="color:#f92672">*</span>child <span style="color:#f92672">=</span> root<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>children[i];
+      TrieTree <span style="color:#f92672">*</span>child <span style="color:#f92672">=</span> root<span style="color:#f92672">-&gt;</span>children[i];
 
-      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">nullptr</span> <span style="color:#f92672">!</span><span style="color:#f92672">=</span> child)
+      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">nullptr</span> <span style="color:#f92672">!=</span> child)
       {
-	<span style="color:#66d9ef">if</span> (child<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>is_end) {
-	  <span style="color:#66d9ef">if</span> (words.size() <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">return</span>;
-	  words.push_back(s <span style="color:#f92672">+</span> child<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>value);
+	<span style="color:#66d9ef">if</span> (child<span style="color:#f92672">-&gt;</span>is_end) {
+	  <span style="color:#66d9ef">if</span> (words.size() <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">return</span>;
+	  words.push_back(s <span style="color:#f92672">+</span> child<span style="color:#f92672">-&gt;</span>value);
 	}
-	print_tree(child, s <span style="color:#f92672">+</span> child<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>value, words);
+	print_tree(child, s <span style="color:#f92672">+</span> child<span style="color:#f92672">-&gt;</span>value, words);
       }
     }
 }
 
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">prefix_three</span>(TrieTree <span style="color:#f92672">*</span>root, string s, vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;</span>words, string target)
 {
-  <span style="color:#66d9ef">for</span> (size_t i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> target.size(); i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+  <span style="color:#66d9ef">for</span> (size_t i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> target.size(); i<span style="color:#f92672">++</span>)
     {
-      <span style="color:#66d9ef">int</span> pos <span style="color:#f92672">=</span> target[i] <span style="color:#f92672">-</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>;
-      TrieTree <span style="color:#f92672">*</span>child <span style="color:#f92672">=</span> root<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>children[pos];
-      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">nullptr</span> <span style="color:#f92672">=</span><span style="color:#f92672">=</span> child) <span style="color:#66d9ef">return</span>;
+      <span style="color:#66d9ef">int</span> pos <span style="color:#f92672">=</span> target[i] <span style="color:#f92672">-</span> <span style="color:#e6db74">&#39;a&#39;</span>;
+      TrieTree <span style="color:#f92672">*</span>child <span style="color:#f92672">=</span> root<span style="color:#f92672">-&gt;</span>children[pos];
+      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">nullptr</span> <span style="color:#f92672">==</span> child) <span style="color:#66d9ef">return</span>;
       root <span style="color:#f92672">=</span> child;
     }
-  <span style="color:#66d9ef">if</span> (root<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>is_end) words.push_back(target);
+  <span style="color:#66d9ef">if</span> (root<span style="color:#f92672">-&gt;</span>is_end) words.push_back(target);
   print_tree(root, target, words);
 }
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
 <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-  vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> suggestedProducts(vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span><span style="color:#f92672">&amp;</span> products, string searchWord) {
+  vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;&gt;</span> suggestedProducts(vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;&amp;</span> products, string searchWord) {
     TrieTree tree;
 
     <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> p : products)
@@ -202,12 +202,12 @@ if (!doNotTrack) {
       insert_word(<span style="color:#f92672">&amp;</span>tree, p);
       }
 
-    vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> result;
+    vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;&gt;</span> result;
 
-    <span style="color:#66d9ef">for</span> (size_t i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> searchWord.size(); i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+    <span style="color:#66d9ef">for</span> (size_t i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> searchWord.size(); i<span style="color:#f92672">++</span>)
       {
       vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> words;
-      prefix_three(<span style="color:#f92672">&amp;</span>tree, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>, words, searchWord.substr(<span style="color:#ae81ff">0</span>, i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>));
+      prefix_three(<span style="color:#f92672">&amp;</span>tree, <span style="color:#e6db74">&#34;&#34;</span>, words, searchWord.substr(<span style="color:#ae81ff">0</span>, i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>));
       result.push_back(words);
       }
 
@@ -223,21 +223,21 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// }
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// ;
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// string word = &#34;mouse&#34;;
-</span><span style="color:#75715e"></span>  vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> products  {<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">code</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">codephone</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">coddle</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">coddles</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">codes</span><span style="color:#e6db74">&#34;</span>
+</span><span style="color:#75715e"></span>  vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> products  {<span style="color:#e6db74">&#34;code&#34;</span>,<span style="color:#e6db74">&#34;codephone&#34;</span>,<span style="color:#e6db74">&#34;coddle&#34;</span>,<span style="color:#e6db74">&#34;coddles&#34;</span>,<span style="color:#e6db74">&#34;codes&#34;</span>
   };
-  string word <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">coddle</span><span style="color:#e6db74">&#34;</span>;
+  string word <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;coddle&#34;</span>;
 
-  vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> result <span style="color:#f92672">=</span> a.suggestedProducts(products, word);
-  <span style="color:#66d9ef">for</span> (size_t i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> result.size(); i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+  vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;&gt;</span> result <span style="color:#f92672">=</span> a.suggestedProducts(products, word);
+  <span style="color:#66d9ef">for</span> (size_t i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> result.size(); i<span style="color:#f92672">++</span>)
     {
       vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> x <span style="color:#f92672">=</span> result[i];
-      cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">prefix: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> word.substr(<span style="color:#ae81ff">0</span>, i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+      cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;prefix: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> word.substr(<span style="color:#ae81ff">0</span>, i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">&lt;&lt;</span> endl;
 
       <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> y : x)
       {
-	cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> y <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>;
+	cout <span style="color:#f92672">&lt;&lt;</span> y <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; &#34;</span>;
       }
-      cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+      cout <span style="color:#f92672">&lt;&lt;</span> endl;
     }
 
   <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
@@ -247,7 +247,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">TrieTree2</span>
 {
   priority_queue<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> words;
-  unordered_map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span>, TrieTree2<span style="color:#f92672">*</span><span style="color:#f92672">&gt;</span> children;
+  unordered_map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span>, TrieTree2<span style="color:#f92672">*&gt;</span> children;
 };
 
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">insert_word2</span>(TrieTree2 <span style="color:#f92672">*</span>root, string s)
@@ -256,31 +256,31 @@ if (!doNotTrack) {
 
   <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> x: s)
     {
-      <span style="color:#66d9ef">if</span> (cur<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>children.find(x) <span style="color:#f92672">=</span><span style="color:#f92672">=</span> cur<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>children.end())
+      <span style="color:#66d9ef">if</span> (cur<span style="color:#f92672">-&gt;</span>children.find(x) <span style="color:#f92672">==</span> cur<span style="color:#f92672">-&gt;</span>children.end())
 	{
-	  cur<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>children[x] <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TrieTree2();
+	  cur<span style="color:#f92672">-&gt;</span>children[x] <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TrieTree2();
 	}
-      cur <span style="color:#f92672">=</span> cur<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>children[x];
-      cur<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>words.push(s);
-      <span style="color:#66d9ef">if</span> (cur<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>words.size() <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>) cur<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>words.pop();
+      cur <span style="color:#f92672">=</span> cur<span style="color:#f92672">-&gt;</span>children[x];
+      cur<span style="color:#f92672">-&gt;</span>words.push(s);
+      <span style="color:#66d9ef">if</span> (cur<span style="color:#f92672">-&gt;</span>words.size() <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>) cur<span style="color:#f92672">-&gt;</span>words.pop();
     }
 }
 
-vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> get_words2(TrieTree2 <span style="color:#f92672">*</span>root, string s)
+vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;&gt;</span> get_words2(TrieTree2 <span style="color:#f92672">*</span>root, string s)
 {
   TrieTree2 <span style="color:#f92672">*</span>cur <span style="color:#f92672">=</span> root;
-  vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> res;
-  <span style="color:#66d9ef">for</span> (size_t i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> s.size(); i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+  vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;&gt;</span> res;
+  <span style="color:#66d9ef">for</span> (size_t i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> s.size(); i<span style="color:#f92672">++</span>)
     {
       vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> tmp;
-      <span style="color:#66d9ef">if</span> (cur <span style="color:#f92672">!</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>)
+      <span style="color:#66d9ef">if</span> (cur <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nullptr</span>)
 	{
-	  cur <span style="color:#f92672">=</span> cur<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>children[s[i]];
+	  cur <span style="color:#f92672">=</span> cur<span style="color:#f92672">-&gt;</span>children[s[i]];
 
-	  <span style="color:#66d9ef">while</span>(cur <span style="color:#f92672">!</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> <span style="color:#f92672">!</span>cur<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>words.empty())
+	  <span style="color:#66d9ef">while</span>(cur <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nullptr</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>cur<span style="color:#f92672">-&gt;</span>words.empty())
 	    {
-	      tmp.push_back(cur<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>words.top());
-	      cur<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>words.pop();
+	      tmp.push_back(cur<span style="color:#f92672">-&gt;</span>words.top());
+	      cur<span style="color:#f92672">-&gt;</span>words.pop();
 	    }
 	}
       reverse(tmp.begin(), tmp.end());
@@ -291,7 +291,7 @@ vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&
 
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
 <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-  vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> suggestedProducts(vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span><span style="color:#f92672">&amp;</span> products, string searchWord) {
+  vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;&gt;</span> suggestedProducts(vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;&amp;</span> products, string searchWord) {
     TrieTree2 <span style="color:#f92672">*</span>root <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TrieTree2();
     <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> x: products) insert_word2(root, x);
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">get_words2</span>(root, searchWord);

@@ -7,7 +7,7 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.60.0" />
+<meta name="generator" content="Hugo 0.74.1" />
 
 <link rel="canonical" href="/post/leetcode-1282/">
 <meta property="og:title" content="LeetCode 1282. 用户分组" />
@@ -159,32 +159,32 @@ if (!doNotTrack) {
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
 </blockquote>
 <p>这道题目可以说没有任何难度，把组人数相同的人放在一起然后分组即可。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;unordered_map&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unordered_map&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
 <span style="color:#66d9ef">using</span> VI <span style="color:#f92672">=</span> vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>;
 
 
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
 <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-  vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> groupThePeople(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&amp;</span> groupSizes) {
+  vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> groupThePeople(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&amp;</span> groupSizes) {
     unordered_map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, VI<span style="color:#f92672">&gt;</span> people;
 
-    <span style="color:#66d9ef">for</span> (size_t i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> groupSizes.size(); i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+    <span style="color:#66d9ef">for</span> (size_t i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> groupSizes.size(); i<span style="color:#f92672">++</span>)
       {
       <span style="color:#66d9ef">int</span> sz <span style="color:#f92672">=</span> groupSizes[i];
-      <span style="color:#66d9ef">if</span> (people.find(sz) <span style="color:#f92672">=</span><span style="color:#f92672">=</span> people.end()) people[sz] <span style="color:#f92672">=</span> VI {<span style="color:#66d9ef">int</span>(i)} ;
+      <span style="color:#66d9ef">if</span> (people.find(sz) <span style="color:#f92672">==</span> people.end()) people[sz] <span style="color:#f92672">=</span> VI {<span style="color:#66d9ef">int</span>(i)} ;
       <span style="color:#66d9ef">else</span> people[sz].push_back(i);
       }
     vector<span style="color:#f92672">&lt;</span>VI<span style="color:#f92672">&gt;</span> res;
     <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> it: people)
       {
-      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> it.second.size() <span style="color:#f92672">/</span> it.first; j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> it.second.size() <span style="color:#f92672">/</span> it.first; j<span style="color:#f92672">++</span>)
 	{
 	  VI tmp;
-	  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> it.first; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) tmp.push_back(it.second[j <span style="color:#f92672">*</span> it.first <span style="color:#f92672">+</span> i]);
+	  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> it.first; i<span style="color:#f92672">++</span>) tmp.push_back(it.second[j <span style="color:#f92672">*</span> it.first <span style="color:#f92672">+</span> i]);
 	  res.push_back(tmp);
 	}
       }

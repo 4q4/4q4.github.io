@@ -7,7 +7,7 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.60.0" />
+<meta name="generator" content="Hugo 0.74.1" />
 
 <link rel="canonical" href="/post/leetcode-25/">
 <meta property="og:title" content="LeetCode 25. K 个一组翻转链表" />
@@ -170,46 +170,46 @@ if (!doNotTrack) {
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
 <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
   ListNode<span style="color:#f92672">*</span> reverseKGroup(ListNode<span style="color:#f92672">*</span> head, <span style="color:#66d9ef">int</span> k) {
-    <span style="color:#66d9ef">if</span> (head <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>) <span style="color:#66d9ef">return</span> head;
+    <span style="color:#66d9ef">if</span> (head <span style="color:#f92672">==</span> <span style="color:#66d9ef">nullptr</span>) <span style="color:#66d9ef">return</span> head;
     <span style="color:#66d9ef">using</span> lp <span style="color:#f92672">=</span> ListNode<span style="color:#f92672">*</span>;
     lp t1, t2, tmp, t3 <span style="color:#f92672">=</span> head, pt <span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>;
     <span style="color:#66d9ef">int</span> cnt <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-    <span style="color:#66d9ef">while</span> (true <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> t3 <span style="color:#f92672">!</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>)
+    <span style="color:#66d9ef">while</span> (true <span style="color:#f92672">&amp;&amp;</span> t3 <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nullptr</span>)
       {
 	t2 <span style="color:#f92672">=</span> t1 <span style="color:#f92672">=</span> t3;
-	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> k <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> k <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; i<span style="color:#f92672">++</span>)
 	  {
-	    t2 <span style="color:#f92672">=</span> t2<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next;
-	    <span style="color:#66d9ef">if</span> (t2 <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>) <span style="color:#66d9ef">break</span>;
+	    t2 <span style="color:#f92672">=</span> t2<span style="color:#f92672">-&gt;</span>next;
+	    <span style="color:#66d9ef">if</span> (t2 <span style="color:#f92672">==</span> <span style="color:#66d9ef">nullptr</span>) <span style="color:#66d9ef">break</span>;
 	  }
-	<span style="color:#66d9ef">if</span> (t2 <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>) {
-	  <span style="color:#66d9ef">if</span> (pt <span style="color:#f92672">!</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>)
-	    pt<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next <span style="color:#f92672">=</span> t1;
+	<span style="color:#66d9ef">if</span> (t2 <span style="color:#f92672">==</span> <span style="color:#66d9ef">nullptr</span>) {
+	  <span style="color:#66d9ef">if</span> (pt <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nullptr</span>)
+	    pt<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> t1;
 	  <span style="color:#66d9ef">break</span>;
 	}
-	<span style="color:#66d9ef">if</span> (pt <span style="color:#f92672">!</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>)
-	  pt<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next <span style="color:#f92672">=</span> t2;
+	<span style="color:#66d9ef">if</span> (pt <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nullptr</span>)
+	  pt<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> t2;
 
-	<span style="color:#66d9ef">if</span> (t1 <span style="color:#f92672">=</span><span style="color:#f92672">=</span> head)
+	<span style="color:#66d9ef">if</span> (t1 <span style="color:#f92672">==</span> head)
 	  head <span style="color:#f92672">=</span> t2;
-	t3 <span style="color:#f92672">=</span> t2<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next;
+	t3 <span style="color:#f92672">=</span> t2<span style="color:#f92672">-&gt;</span>next;
 
 	lp p1, p2, p3;
 	p1 <span style="color:#f92672">=</span> t1;
-	p2 <span style="color:#f92672">=</span> p1<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next;
+	p2 <span style="color:#f92672">=</span> p1<span style="color:#f92672">-&gt;</span>next;
 
-	<span style="color:#66d9ef">while</span> (p1 <span style="color:#f92672">!</span><span style="color:#f92672">=</span> t2)
+	<span style="color:#66d9ef">while</span> (p1 <span style="color:#f92672">!=</span> t2)
 	  {
-	    p3 <span style="color:#f92672">=</span> p2<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next;
-	    p2<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next <span style="color:#f92672">=</span> p1;
+	    p3 <span style="color:#f92672">=</span> p2<span style="color:#f92672">-&gt;</span>next;
+	    p2<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> p1;
 	    p1 <span style="color:#f92672">=</span> p2;
 	    p2 <span style="color:#f92672">=</span> p3;
 	  }
 	pt <span style="color:#f92672">=</span> t1;
 
-	<span style="color:#66d9ef">if</span> (t3 <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>)
+	<span style="color:#66d9ef">if</span> (t3 <span style="color:#f92672">==</span> <span style="color:#66d9ef">nullptr</span>)
 	  {
-	    pt<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next <span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>;
+	    pt<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>;
 	    <span style="color:#66d9ef">break</span>;
 	  }
       }

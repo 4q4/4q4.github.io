@@ -7,7 +7,7 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.60.0" />
+<meta name="generator" content="Hugo 0.74.1" />
 
 <link rel="canonical" href="/post/leetcode-1043/">
 <meta property="og:title" content="LeetCode 1043. 分隔数组以得到最大和" />
@@ -150,11 +150,11 @@ if (!doNotTrack) {
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
 </blockquote>
 <p>看到这道题目一开始是在群里，发了英文版的这道题目，大概看了一下，以为是分割成最多 <code>K</code> 个子数组，然后写了一下，最后提交当然是答案错误，反推错误的样例，发现没错啊，然后再看中文题意，发现理解错了。本意是每个子数组长度最多是 <code>K</code> ，然后就没啥思路了。猜想是 DP，可是也没有构造出状态，最后没有做出来。群里人说确实是 DP，然后我瞄了一眼题解，确实很多都是 DP 来做的，自己又朝着 DP 的方向思考，还是没有想出来。今天上午又开始想这道题目：既然是 DP，并且看题解也不是一道复杂的 DP，那么状态应该很简单，只需要构造出一个状态，满足：最优子结构、无后效性即可。然后就开始假设状态，思考决策的过程应该检查哪些状态，有哪些条件，哪些条件是必须的，哪些条件是不需要保存的，对于下一个状态，是不是只和上一个（或者多个）状态的结果有关。最后想到可以用 <code>dp[i]</code> 来表示前 <code>i</code> 个数字的最优解，开始以为也需要保存以第 <code>i</code> 个数字结尾的子数组的长度，后来发现下一个状态并不需要这个东西，因为下一个数字加入进来的时候，并不需要延展以第 <code>i</code> 个数字结尾的子数组，它只需要作为一个以第 <code>i+1</code> 个数字的新数组向左延展就好了，最多延展的长度是 <code>K</code> ，这样可以保证遍历到所有的上一个状态。这样就可以得到最优解即 <code>dp[n]</code> 。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;functional&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;functional&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
 <span style="color:#66d9ef">using</span> VI <span style="color:#f92672">=</span> vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>;
@@ -162,18 +162,18 @@ if (!doNotTrack) {
 
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
 <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-  <span style="color:#66d9ef">int</span> maxSumAfterPartitioning(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&amp;</span> A, <span style="color:#66d9ef">int</span> K) {
+  <span style="color:#66d9ef">int</span> maxSumAfterPartitioning(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&amp;</span> A, <span style="color:#66d9ef">int</span> K) {
     <span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> <span style="color:#66d9ef">int</span>(A.size());
     VI <span style="color:#a6e22e">dp</span>(len, <span style="color:#ae81ff">0</span>);
     dp[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> A[<span style="color:#ae81ff">0</span>];
 
-    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> len; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> len; i<span style="color:#f92672">++</span>)
       {
 	<span style="color:#66d9ef">int</span> tmp <span style="color:#f92672">=</span> dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> A[i], item <span style="color:#f92672">=</span> A[i];
-	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> K <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> i <span style="color:#f92672">-</span> j <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> K <span style="color:#f92672">&amp;&amp;</span> i <span style="color:#f92672">-</span> j <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; j<span style="color:#f92672">++</span>)
 	  {
 	    item <span style="color:#f92672">=</span> max(item, A[i <span style="color:#f92672">-</span> j]);
-	    <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">-</span> j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>)
+	    <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">-</span> j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>)
 	      tmp <span style="color:#f92672">=</span> max(dp[i <span style="color:#f92672">-</span> j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> (j <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">*</span> item, tmp);
 	    <span style="color:#66d9ef">else</span>
 	      tmp <span style="color:#f92672">=</span> max((j <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">*</span> item, tmp);
